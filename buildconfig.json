@@ -3,7 +3,7 @@
   "productName": "Ankama Launcher",
   "environment": "production",
   "cytrus": {
-    "repository": "http://localhost:9000/zaap/cytrus"
+    "repository": "https://REMPLACER-PAR-VOTRE-DOMAINE/launcher-repo"
   },
   "autoupdater": {
     "url": "https://ankama.akamaized.net/zaap/installers"
