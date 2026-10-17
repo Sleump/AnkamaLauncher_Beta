@@ -1,12 +1,13 @@
 {
   "name": "zaap",
+  "productName": "Dofus Retro Launcher",
   "version": "2.8.4",
-  "copyright": "Ankama",
-  "description": "Ankama portal and game launcher",
+  "copyright": "Dofus Retro (projet communautaire non officiel, sans lien avec Ankama)",
+  "description": "Launcher non officiel pour le serveur prive Dofus Retro (ElbustEmu)",
   "main": "index.js",
   "private": true,
-  "author": "Ankama <info@ankama.com>",
-  "homepage": "https://www.ankama.com",
+  "author": "Dofus Retro (projet communautaire non officiel)",
+  "homepage": "http://158.69.222.31/site/",
   "defaultLanguage": "en",
   "supportedLanguages": [
     "en",
@@ -18,7 +19,36 @@
   ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "electron ."
+    "start": "electron .",
+    "dist": "electron-builder"
+  },
+  "build": {
+    "appId": "net.dofusretro.launcher",
+    "productName": "Dofus Retro Launcher",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "**/*",
+      "!dist${/*}"
+    ],
+    "win": {
+      "target": [
+        "nsis"
+      ]
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "perMachine": false
+    },
+    "publish": [
+      {
+        "provider": "generic",
+        "url": "http://158.69.222.31/launcher-dist/production",
+        "channel": "latest"
+      }
+    ]
   },
   "dependencies": {
     "auto-launch": "5.0.5",
@@ -62,6 +92,7 @@
     "winston": "2.4.2"
   },
   "devDependencies": {
-    "electron": "^4.0.2"
+    "electron": "^4.0.2",
+    "electron-builder": "^20.44.4"
   }
 }

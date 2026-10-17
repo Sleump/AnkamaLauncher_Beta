@@ -1,15 +1,12 @@
 {
   "name": "zaap",
-  "productName": "Ankama Launcher",
+  "productName": "Dofus Retro Launcher",
   "environment": "production",
   "cytrus": {
     "repository": "http://158.69.222.31/launcher-repo"
   },
   "autoupdater": {
-    "url": "https://ankama.akamaized.net/zaap/installers"
-  },
-  "sentry": {
-    "dsn": "https://cfd88e06dc924b60bc4decd26e45bd96:1324c3e5113a47ef8809897e631a7932@sentry.io/196019"
+    "url": "http://158.69.222.31/launcher-dist"
   },
   "haapi": {
     "url": "http://127.0.0.1:9000/"
