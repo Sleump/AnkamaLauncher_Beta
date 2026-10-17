@@ -143,7 +143,9 @@
     "pause": "Mettre en pause",
     "install": "Installer",
     "runningInstances": "{runningInstancesCount} instances en cours...",
-    "remainingSizeToDownload": "{remainingSizeToDownload} restants à télécharger"
+    "remainingSizeToDownload": "{remainingSizeToDownload} restants à télécharger",
+    "remainingTime": "Temps restant estimé : {remainingTime}",
+    "remainingTimeCalculating": "Calcul du temps restant..."
   },
   "terms": {
     "title": "Conditions générales d'utilisation",

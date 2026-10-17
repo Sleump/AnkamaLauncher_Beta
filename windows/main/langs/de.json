@@ -135,7 +135,9 @@
     "pause": "Pausieren",
     "install": "Installieren",
     "runningInstances": "{runningInstancesCount} Instanzen werden ausgeführt …",
-    "remainingSizeToDownload": "{remainingSizeToDownload} verbleiben zum Download"
+    "remainingSizeToDownload": "{remainingSizeToDownload} verbleiben zum Download",
+    "remainingTime": "Geschätzte verbleibende Zeit: {remainingTime}",
+    "remainingTimeCalculating": "Verbleibende Zeit wird berechnet..."
   },
   "terms": {
     "title": "Allgemeine Nutzungsbedingungen",

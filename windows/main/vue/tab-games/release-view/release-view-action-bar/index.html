@@ -83,6 +83,12 @@
         <div class="m-release-view-action-bar--tooltip">
           {{ $t('releaseViewActionBar.remainingSizeToDownload', { remainingSizeToDownload }) }} <br>
         </div>
+        <template v-if="estimatedTimeRemaining">
+          {{ $t('releaseViewActionBar.remainingTime', { remainingTime: estimatedTimeRemaining }) }}
+        </template>
+        <template v-else-if="!repairProgress && progress > 0">
+          {{ $t('releaseViewActionBar.remainingTimeCalculating') }}
+        </template>
       </template>
 
       <!-- Up to date: play! -->
@@ -176,6 +182,20 @@
 
         return this.prettyBytes(remainingSize > 0 ? remainingSize : 0)
       },
+      estimatedTimeRemaining() {
+        if (this.repairProgress || !this.update || !this.update.downloadSpeed) {
+          return null
+        }
+
+        const downloadProgress = this.update.overallDownloadProgress
+        const remainingSize = downloadProgress.totalSize - downloadProgress.downloadedSize
+
+        if (remainingSize <= 0) {
+          return null
+        }
+
+        return this.formatRemainingTime(remainingSize / this.update.downloadSpeed)
+      },
       info() {
         return this.release.information[this.language]
       },
@@ -247,6 +267,25 @@
         this.$store.dispatch('openReleaseSettingsPopup')
       },
       prettyBytes: require('./lib/prettyBytes'),
+      formatRemainingTime(totalSeconds) {
+        if (!isFinite(totalSeconds) || totalSeconds < 0) {
+          return null
+        }
+
+        const hours = Math.floor(totalSeconds / 3600)
+        const minutes = Math.floor((totalSeconds % 3600) / 60)
+        const seconds = Math.floor(totalSeconds % 60)
+
+        if (hours > 0) {
+          return `${hours}h ${String(minutes).padStart(2, '0')}min`
+        }
+
+        if (minutes > 0) {
+          return `${minutes}min ${String(seconds).padStart(2, '0')}s`
+        }
+
+        return `${seconds}s`
+      },
       startErrorCallback(event, error) {
         this.error = error
         logger.error(error.message)
