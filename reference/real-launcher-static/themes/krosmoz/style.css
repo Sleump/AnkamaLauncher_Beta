@@ -1,0 +1,76 @@
+:root {
+  /* generic background colors */
+  --color-primary: #0099CC;
+  --dark-background: #001519;
+  --background: #003743;
+  --light-background: #005062;
+  --lighter-background: #00586B;
+  --foreground: #006880;
+  --lighter-foreground: #00758F;
+  --red: #EB7D19;
+  --dark-red: #EB7D19;
+  /* Common components backgrounds */
+  --header-background: #001519;
+  --carousel-info-background: #003743;
+  --pin-container-background: #061622;
+  --main-gradient: linear-gradient(0deg, #00586B 0%, #052A36 40%, #061622 100%);
+  --primary-hover: #006F93;
+  /* Specific components background */
+  --news-background: white;
+  --news-tile-header: white;
+  --vod-tiles-background: #00586B;
+  --header-vertical-split: var(--background);
+  --login-background: linear-gradient(0deg,
+  #021623 0%,
+  rgba(0, 102, 124, 1) 60%,
+  rgba(0, 134, 178, 0.4) 100%);
+  /* fonts */
+  --main-font: var(--dark-white);
+  --news-font: var(--dark-grey);
+  --news-subtitle-font: var(--dark-grey);
+  --news-tile-title: #006F93;
+  --news-tile-title-important: #006F93;
+  --news-baseline: var(--grey);
+  --news-tile-baseline: var(--very-dark-grey);
+  --header-text-color: white;
+  /* Others */
+  --news-icon: var(--light-grey);
+  --color-filled-button: #00586B;
+  --color-transparent-button: rgba(0, 41, 64, 0.50);
+  --color-transparent-border: white;
+  --button-border-color: white;
+  --button-text-color: #00586B;
+  /* favorite release shades */
+  --transparent-background: rgba(0, 55, 67, 0.9);
+  --webtoon-home-header-background: linear-gradient(-90deg, #00586B7D 42.81%, #00586B 75.27%);
+  --webtoon-unlock-background: linear-gradient(0deg, var(--lighter-background) 0%, rgba(5, 42, 54, 0.9) 40.93%, rgba(6, 22, 34, 0.8) 89.51%);
+  --webtoon-reactions-background: white;
+  /* wallpaper */
+  --wallpaper-home-background: radial-gradient(806px 2440px at calc(100% - 201px) 482px, #003354 0%, #021623 1667px);
+  --wallpaper-home-bottom-shadow: linear-gradient(0deg, #004264 0%, rgba(1, 37, 61, 0) 100%);
+  --wallpaper-action-btn-color: #005472;
+  --wallpaper-text-accent-color: #2BE1FF;
+  --wallpaper-details-background: #040A0F;
+  --wallpaper-details-content-background: radial-gradient(151.73% 600px at 96.32% 25px, #002C43 0%, #021623 2027px);
+
+  /* new theme */
+  --select-background: #021623;
+  --select-background-hover: #002C43;
+  --select-text-selected: #009EBB;
+  --select-separator: #009EBB;
+  --menu-background-active: linear-gradient(180deg,
+    rgba(10, 45, 98, 0) 12%, rgba(0, 154, 203, 0.48) 57%, #00DDFF 100%);
+  --menu-background-inactive: linear-gradient(180deg, rgba(10, 45, 98, 0) 12%,
+    rgba(0, 154, 203, 0.048) 57%, rgba(0, 221, 255, 0.1) 100%);
+;
+}
+
+.news-tile .tile-title {
+  font-weight: 700;
+}
+
+@media (min-width: 1600px) and (min-height: 780px) {
+  :root {
+    --main-gradient: linear-gradient(0deg, #00586B 0%, #052A36 40%, #061622 100%);
+  }
+}

@@ -1,0 +1,1685 @@
+{
+  "bugReport": {
+    "title": "Support",
+    "faq": "FAQ",
+    "faqExplain": "Falls du Fragen zur Funktionsweise und Nutzung des Launchers hast, findest du hier eine Liste mit FAQs:",
+    "assistance": "Support",
+    "assistanceExplain": "Falls du Unterstützung benötigst oder Bugs melden möchtest, steht dir der Support zur Verfügung.",
+    "emptyCache" : "Launcher aktualisieren",
+    "emptyCacheExplain" : "Falls du ein Problem hast, kannst du den Cache des Launchers leeren und prüfen, ob die Version deines Launchers mit der der letzten Patch Notes übereinstimmt.",
+    "logs": "Logs",
+    "logsExplain": "Um dich besser unterstützen zu können, können deine Logdateien notwendig sein. Dazu musst du die Datei „application.log“ kopieren. Achtung: Sende diese Datei zu deiner Sicherheit bitte nur über den Ankama Support.",
+
+    "button": {
+      "faq": "Launcher-FAQ",
+      "assistance": "Technischer Support",
+      "emptyCache" : "Launcher aktualisieren"
+    }
+  },
+  "connectivity": {
+    "errorNotification": {
+      "title": "Keine Internetverbindung",
+      "message": "Deine Internetverbindung scheint unterbrochen. Einige Dienste wurden daher deaktiviert."
+    }
+  },
+  "chat": {
+    "chat": "Chat",
+    "isOffline": "Chat offline",
+    "isReconnecting": "Chat offline, Verbindung wird wiederhergestellt ...",
+    "toReconnect": "Um dich wieder anzumelden, klicke bitte ",
+    "clickHere": "hier",
+    "noNotification": "Du bist nun beschäftigt und erhältst keine Benachrichtigungen mehr.",
+    "createChannel": "Ein Gespräch erstellen",
+    "validate": "Bestätigen",
+    "channel": {
+      "addToGroupChannel": "Einen Freund dem Gespräch hinzufügen",
+      "alreadyMember": "{fullPseudo} ist bereits in dieser Lobby.",
+      "countMembers": "{count} Person",
+      "countMembers_plural": "{count} Personen",
+      "sendInvite": "Freundschaftsanfrage senden",
+      "newMessageFromFriend": "Nachricht von {friend}",
+      "replyPlaceholder": "Gib deine Antwort hier ein",
+      "longMessage": "Deine Nachricht darf nicht länger als 2.000 Zeichen sein.",
+      "isTyping": "schreibt ...",
+      "isTyping_plural": "schreiben ...",
+      "newMessage": "Neue Nachricht",
+      "newMessages": "Neue Nachrichten",
+      "writeAMessage": "Sende eine Nachricht",
+      "noChannel": "Kein Gespräch",
+      "noMessage": "Fehlt es dir an Inspiration? Sag doch einfach hallo!",
+      "startChannel": "Starte eine Unterhaltung mit deinen Freunden über den Reiter <span>{friendTab}</span>, indem du einen Freund direkt anklickst.",
+      "startConversation": "Ein Gespräch beginnen",
+      "sendAMessage": "Eine Nachricht senden",
+      "parameters": "Unterhaltungseinstellungen",
+      "edit": "Umbenennen",
+      "delete": "Löschen",
+      "create": "Erstellen",
+      "quitChannel": "Das Gespräch verlassen",
+      "clearClipboard": "Zwischenablage leeren"
+    },
+    "deeplink": {
+      "theGame": "Das Spiel",
+      "theSeries": "Die Serie",
+      "errors": {
+        "episode": "Folge nicht verfügbar",
+        "series": "Serie nicht verfügbar",
+        "trailer": "Trailer nicht verfügbar",
+        "video": "Video nicht verfügbar"
+      }
+    },
+    "friendlist": {
+      "count-s": "{count} Freund",
+      "count-p": "{count} Freunde",
+      "onlineFriends": "Angemeldete Freunde",
+      "noFriend": "Kein Freund",
+      "deleteFriendFromList": "Diesen Freund löschen",
+      "confirmDelete": "Möchtest du diesen Freund wirklich löschen?",
+      "confirmDeleteGroup": "Möchtest du diese Gruppe wirklich löschen? Die Freunde, die sich hier aufhalten, werden automatisch in deine Freundesliste aufgenommen.",
+      "changeGroup": "Gruppe wechseln",
+      "addToGroup": "Zu einer Gruppe hinzufügen",
+      "removeFromGroup": "Aus der Gruppe entfernen",
+      "moveToGroup": "In diese Gruppe verschieben",
+      "newGroup": "Neue Gruppe",
+      "newConnection": "Neue Anmeldung",
+      "newFriendOnline": "{pseudo} hat sich gerade angemeldet.",
+      "addNote": "Anmerkung zu diesem Freund",
+      "editNote": "Anmerkung bearbeiten",
+      "cancel": "Abbrechen",
+      "searchFriendOrGroup": "Freund suchen",
+      "searchFriendOrConversation": "Erneut suchen",
+      "clearSearch": "Suche löschen",
+      "isInLauncher": "Anwesend im Launcher",
+      "isInChat": "Anwesend im Chat",
+      "refreshError": "Fehler bei der Aktualisierung.",
+      "toRefresh": "Um deine Freundesliste zu aktualisieren",
+      "selectGroup": "Wähle eine Gruppe",
+      "deleteGroup": "Gruppe löschen",
+      "editName": "Umbenennen",
+      "editGroupNameError": "Die Gruppe kann nicht umbenannt werden. Bitte versuche es später noch einmal.",
+      "editFriendGroupNameError": "Die Gruppe von {pseudo} kann nicht verändert werden. Bitte versuche es später noch einmal."
+    },
+    "invites": {
+      "sendInvite": "Einladung senden",
+      "inviteFriendWithTag": "Einen Freund (Benutzername#XXXX) einladen",
+      "inviteFriends": "Lade deine Freunde über den Reiter <span>{inviteTab}</span> in den Chat ein.",
+      "sentInvites": "Gesendete Einladungen",
+      "receivedInvites": "Erhaltene Einladungen",
+      "countPendingInvites": "ausstehende Einladung(en)",
+      "blockedContacts": "Gesperrte Personen",
+      "countBlockedContacts": "gesperrte Person(en)",
+      "receiveInvite": "{pseudo} möchte dein Freund werden.",
+      "friendRequest": "möchte dein Freund werden!",
+      "noResult": "Kein Ergebnis für {pseudo}.",
+      "inviteAlreadySentTo": "{pseudo} wurde bereits eine Einladung gesendet.",
+      "inviteInPendingList": "Dieser Freund befindet sich bereits in deiner Liste erhaltener Einladungen.",
+      "isAlreadyFriend": "{pseudo} ist bereits dein Freund.",
+      "cannotSelfInvite": "Du kannst dich nicht selbst einladen.",
+      "newFriendInvite": "Neue Freundschaftsanfragen",
+      "hasBeenAccepted": "hat deine Einladung angenommen!",
+      "cannotSendInvite": "Du kannst {pseudo} keine Einladung schicken.",
+      "inviteInBlockedList": "Du kannst keinen blockierten Kontakt einladen.",
+      "rejectedInvite": "hat deine Einladung abgelehnt.",
+      "invalidPseudoFormat": "Die Einladung muss im Format Benutzername#XXXX, mit einem Benutzernamen mit 3 bis 29 Zeichen (a-z, A-Z, 0-9, -), erstellt werden."
+    },
+    "status": {
+      "online": "Online",
+      "offline": "Offline",
+      "away": "Abwesend",
+      "busy": "Beschäftigt"
+    },
+    "tabs": {
+      "conversations": "Unterh.",
+      "friends": "Freunde",
+      "invites": "Einl."
+    },
+    "terms": {
+      "start": "Durch Nutzung des Chats verpflichtest du dich, die Verhaltensregeln und Informationen zur Kenntnis zu nehmen, die hier festgelegt sind: ",
+      "link": "Nutzungsbedingungen",
+      "end": "."
+    }
+  },
+  "disk": {
+    "error": {
+      "unableToGetDriveInfo": "Datenträgerinformationen können nicht abgerufen werden.",
+      "invalidPath": "Ungültiger Pfad"
+    }
+  },
+  "haapi": {
+    "error": {
+      "generic": "Während der Authentifizierung ist ein Fehler aufgetreten.",
+      "ban": "Account wurde gebannt",
+      "blacklist": "Die verwendete IP-Adresse ist verdächtig und steht auf der Sperrliste.",
+      "locked": "Der Account wurde gesperrt.",
+      "deleted": "Der Account wurde gelöscht.",
+      "resetAnkama": "Der Account muss über die Accountverwaltung zurückgesetzt werden.",
+      "otpTimeFailed": "Du musst deinen Account über den Ankama Authenticator entsperren.",
+      "securityCard": "Der Account erfordert eine Sicherheitskarte.",
+      "bruteForce": "Der Account ist vorübergehend blockiert, bitte versuche es später erneut.",
+      "failed": "Accountname oder Passwort ungültig.",
+      "partner": "Der Account ist wegen der Einschränkung durch einen Partner nicht autorisiert.",
+      "invalidEmail": "Bitte bestätige deine E-Mail-Adresse über die Accountverwaltung.",
+      "notFound": "Dieser Account konnte nicht gefunden werden.",
+      "linkedAccount": "Dieser Account ist bereits verknüpft.",
+      "invalidAccount": "Dieser Account ist nicht gültig.",
+      "shieldedAccount": "Bei aktiviertem Shield kann kein Ankama-Account verknüpft werden.",
+      "notCertifiedAccount": "Ein unbestätigter Ankama-Account kann nicht verknüpft werden.",
+      "notReachable": "Auf den Server kann nicht zugegriffen werden, bitte überprüfe die Internetverbindung.",
+      "timeout": "Der Server braucht zu lange, um eine Antwort zu senden, bitte überprüfe die Internetverbindung oder versuche es später erneut.",
+      "accountAlreadyRegistered": "Dieser Account existiert bereits.",
+      "sameEmail": "Die eingegebene E-Mail-Adresse stimmt mit der vorherigen überein.",
+      "alreadyValidate": "Deine E-Mail-Adresse wurde bereits bestätigt.",
+      "nicknameUnavailable": "Dieser Benutzername ist nicht verfügbar.",
+      "forbiddenIp": "<p>Unzulässige Anmeldung: Deine IP-Adresse wird unterdrückt. Weitere Informationen findest du in unseren <a href=\"{faqLink}\">FAQ</a>.</p>",
+      "sameNickname": "Benutzername und Accountname dürfen nicht identisch sein.",
+      "shieldCodeIncorrect": "Der Code ist falsch oder abgelaufen.",
+      "unhandledCodeProblem": "Beim Einlösen des Codes ist ein Fehler aufgetreten. Bitte versuche es später erneut.",
+      "shieldCodeExpired": "Der Code ist abgelaufen.",
+      "alreadySecured": "Dein Account ist bereits gesichert. Du wirst automatisch abgemeldet, um deine Sitzung zu aktualisieren.",
+      "apiKeyUntrusted": "Dein Account ist nicht zertifiziert. Gib bitte den Code ein, der dir per E-Mail gesendet wurde.",
+      "banCloudflare": "Du hast zu viele Anfragen gesendet. Warte einige Augenblicke, bevor du es erneut versuchst.",
+      "accountNoCertifiedGSM": "Dein Account ist nicht mit einer zertifizierten Telefonnummer verknüpft.",
+      "accountGsmNoProvider": "Deine internationale Telefonnummer wird von unserem Dienstleister nicht verwaltet.",
+      "apiKeyExpired": "Die Sitzung des Accounts ist aufgrund zu langer Inaktivität abgelaufen. Bitte verbinde dich erneut, um fortzufahren.",
+      "emailAlreadyUsed": "Ein Account ist bereits an diese E-Mail gebunden.",
+      "kardConsumeByCode": {
+        "invalid": "Dieser Code ist ungültig.",
+        "alreadyUsed": "Dieser Code wurde bereits verwendet.",
+        "giveToAFriend": "Dein Account hat diese Aktion, die nur einmal pro Account verfügbar ist, bereits in Anspruch genommen. Aber nicht verschwenden: Sende den Code an einen Freund!"
+      },
+      "kardConsumeById": "Dieser Gegenstand kann nicht verwendet werden.",
+      "twitch": {
+        "consumeEntitlement": "Dieser Twitch-Drop kann nicht verwendet werden.",
+        "availableEntitlements": {
+          "error": "Beim Abholen der Twitch-Drops ist ein Fehler aufgetreten.",
+          "notLinked": "Dein Ankama-Account ist nicht mit deinem Twitch-Konto verknüpft."
+        }
+      }
+    }
+  },
+  "header": {
+    "menu": {
+      "chat": "Chat",
+      "components": "Tests",
+      "games": "Spiele",
+      "home": "Zaap",
+      "news": "News",
+      "video": "Video",
+      "webtoon": "Webtoons",
+      "stream": "Stream",
+      "beta": "beta",
+      "settings": "param.",
+      "shop": "shop",
+      "wallpaper":"Wallpaper",
+      "tooltip": {
+        "notAvailable": "In einem anderen Universum verfügbar",
+        "ShowAllMenu": "Unsere anderen Dienste entdecken"
+      }
+    }
+  },
+  "home": {
+    "actu": "Aktuelles",
+    "config": "Einstellungen bearbeiten",
+    "corruptedWidget": "Dieses Widget ist nicht mehr verfügbar.",
+    "deleteWidget": "Widget löschen",
+    "editWidget": "Widget-Konfiguration",
+    "friends": "Freundesliste",
+    "game": "Spiel",
+    "multi": "Accountverwaltung",
+    "newWidget": "Neues Widget",
+    "selectCategory": "Kategorie wählen",
+    "selectGame": "Spiel wählen",
+    "selectNews": "Art von Neuigkeiten",
+    "shop": "Shop",
+    "shortcut": "Shortcut des Spiels",
+    "source": "Quelle",
+    "submit": "Registrieren",
+    "widgetSize": "Widget-Größe",
+    "widgetType": "Kategorie",
+    "stream": "Stream läuft",
+    "twitter": "Twitter-Flux",
+    "selectChannel": "Kanal",
+    "moreAccountInfo": "Zusätzliche Informationen",
+    "chooseMoreAccountInfo":"Informationsanzeige",
+    "none": "Keine",
+    "aboDofus": "Dofus-Abonnement",
+    "boosterWakfu": "Wakfu-Boost",
+    "playedTime": "Gesamte Spielzeit",
+    "playedTimeDetail_zero": "Spielzeit: weniger als eine Stunde",
+    "playedTimeDetail": "Spielzeit: eine Stunde",
+    "playedTimeDetail_plural": "Spielzeit: {count} Stunden"
+  },
+  "games": {
+    "addFavoriteGames": "Spiele zu deinen Favoriten hinzufügen",
+    "favorite": "Favorit",
+    "noGameFound": "Keine Ergebnisse.",
+    "searchGame": "Nach einem Spiel suchen",
+    "category": {
+      "krosmoz": "<strong>Krosmoz</strong>-Spiele",
+      "inde": "<strong>unabhängige</strong> Spiele"
+    },
+    "home": {
+      "gameListTitleKrosmoz": "<strong>Krosmoz</strong>-Spiele",
+      "gameListTitleInde": "<strong>Unabhängige</strong> Spiele"
+    },
+    "genres": {
+      "MMORPG": "MMORPG",
+      "PARTY": "Party-Spiel",
+      "PLATFORM": "Plattform",
+      "SHOOTEMUP": "Shoot'em up",
+      "CARD": "Kartenspiel",
+      "RPG": "RPG",
+      "STRATEGY": "Strategie",
+      "SOFTWARE": "Software",
+      "MULTI": "Multiplayer",
+      "ACTION": "Action",
+      "ROGUELITE": "Roguelite",
+      "ADVENTURE": "Abenteuer"
+    }
+  },
+  "invalidMail": {
+    "title": "Bestätigung der E-Mail-Adresse",
+    "message": "Eine Bestätigungs-E-Mail wurde gesendet.<br><br>Um fortzufahren, musst du bestätigen, dass deine Adresse korrekt ist. Klicke dazu auf den Link in der E-Mail und dann auf die Schaltfläche weiter unten:",
+    "continue": "Meine Anmeldung abschließen",
+    "resend": "Eine Bestätigungsmail erneut senden",
+    "didntReceivedMail": "Hast du keine E-Mail erhalten?",
+    "enterNewMail": "Eine andere E-Mail-Adresse eingeben",
+    "newMail": "Neue E-Mail-Adresse:",
+    "mail": "E-Mail-Adresse",
+    "validateMail": "Bestätigen",
+    "validationMailSent": "Eine neue Bestätigunsmail wurde gesendet.",
+    "mailChanged": "Eine Bestätigungsmail wurde an deine neue Adresse gesendet.",
+    "mailSent": "Wird gesendet ...",
+    "iValidated": "Ich habe meine E-Mail bestätigt",
+    "mailErrored": "Die E-Mail-Adresse ist ungültig.",
+    "cancel": "Abbrechen",
+    "birthDate": "Geburtsdatum",
+    "parentMail": "E-Mail-Adresse der Eltern",
+    "mailParentErrored": "Die E-Mail-Adresse deines gesetzlichen Erziehungsberechtigten muss sich von deiner E-Mail unterscheiden.",
+    "whyParentMail": "Die Erstellung eines Ankama-Accounts erfordert das Sammeln von personenbezogenen Daten, wofür in deinem Land das Einverständnis des gesetzlichen Erziehungsberechtigten für Nutzer in deinem Alter erforderlich ist. Um die Erstellung deines Accounts zu bestätigen, benötigen wir daher die E-Mail-Adresse eines Elternteils oder eines gesetzlichen Erziehungsberechtigten."
+  },
+  "languages": {
+    "fr_FR": "Französisch",
+    "en_GB": "Englisch",
+    "es_ES": "Spanisch",
+    "pt_PT": "Portugiesisch",
+    "it_IT": "Italienisch",
+    "de_DE": "Deutsch"
+  },
+  "loader": {
+    "done": "Beendet",
+    "loading": "Wird geladen …",
+    "offline": "Keine Internetverbindung gefunden! "
+  },
+  "logbox": {
+    "offline": "Offline",
+    "account": "Mein Account",
+    "accountNotComplete": "Gastaccount",
+    "accountNotCompleteDetail": "Gastaccount<br/> Vervollständige deine Angaben",
+    "logout": "Abmelden",
+    "reconnect": "Wieder anmelden",
+    "choosePseudoTitle": "Dein Benutzername",
+    "abonne": "Abonnement bis zum",
+    "choosePseudoLoginAnkama": "Für ein besseres Spielerlebnis, wähle bitte einen Benutzernamen für den Account {login}. Dieser wird für die Kommunikation im Chat oder für Anfragen an den Support verwendet.",
+    "choosePseudoLogin": "Für ein besseres Spielerlebnis wähle bitte einen Benutzernamen für den Account aus. Dieser wird für die Kommunikation im Chat oder für Anfragen an den Support verwendet.",
+    "waitingProvider": "Ausstehende Anmeldung mit {provider}",
+    "validateGuest": "Gast-Account fertigstellen",
+    "info": "3 bis 29 Zeichen: (a-z, A-Z, 0-9, -).",
+    "nonAbonne": "Nicht abonniert",
+    "ancienAbonne": "Früher abonniert",
+    "freeToPlay": "Free-to-play",
+    "jusquau": "bis zum ",
+    "quit": "Verlassen",
+    "connected": "Im Spiel",
+    "ogrins": "Ogrinen kaufen",
+    "webtoonToken": "Webtoon-Folgen kaufen",
+    "changeAccount": "Account wechseln",
+    "editNote": "Anmerken",
+    "annotationExplain": "Deine Anmerkung eingeben",
+    "saveAnnotation": "Registrieren",
+    "clearAnnotation": "Anmerkung löschen",
+    "accountsManagement": "Accountverwaltung",
+    "newsletter": "Newsletter",
+    "newsletterExplain": "Abonnierte(r) Newsletter:",
+    "codesAndGifts": "Codes & Geschenke",
+    "confirmDeleteGuestTitle": "Gast-Account löschen.",
+    "confirmDeleteGuest": "Dieser Gast-Account wird endgültig gelöscht. Wenn du dich abmelden und dabei deinen Fortschritt speichern willst, müsst du im Vorfeld deinen Account fertigstellen.",
+    "completeAccount": "Meinen Account fertigstellen",
+    "cantCreateGuest": "Es kann kein Gast-Account erstellt werden. Bitte versuche es später erneut.",
+    "tabs": {
+      "codesAndGifts": {
+        "code": {
+          "title": "ANKAMA-Geschenkcode",
+          "description": "Du kannst deinen Geschenkcode hier eingeben. Vergewissere dich, dass du den richtigen Ankama-Account verwendest, bevor du den Code aktivierst.<br/>Sobald er eingelöst wurde, wird er automatisch deinem Account „<b>{nickname}</b>“ gutgeschrieben. Er wird anschließend <u>im Spiel</u> verfügbar sein oder in der nachstehenden Liste erscheinen.",
+          "input": "Code hier eingeben",
+          "button": "Aktivieren",
+          "success": "Dein Code wurde bestätigt!"
+        },
+        "passCulture": {
+          "title": "Kultur-Pass-Code",
+          "description": "Nachdem du ein Ankama-Angebot über die App „KulturPass“ gekauft hast, kannst du den per E-Mail erhaltenen Code hier eingeben.<br/>Nachdem er eingelöst wurde, werden deinem Account „<b>{nickname}</b>“ <u>Webtoons gutgeschrieben</u>. Du kannst das Webtoons-Angebot über den entsprechenden Reiter im Launcher oder die Krosmoz-App in Anspruch nehmen.",
+          "success": "Code eingelöst: Deine Webtoons wurden deinem Account gutgeschrieben."
+        },
+        "kards": {
+          "title": "Deine ausstehenden Geschenke, Abos und Jetons:",
+          "titleNone": "Du hast keine ausstehenden Geschenke.",
+          "error": "Beim Abholen der Geschenke ist ein Fehler aufgetreten.",
+          "useError": "Es ist ein Fehler aufgetreten.<br/>Der Gegenstand wurde bereits verwendet oder kann nicht gefunden werden.",
+          "refresh": "Aktualisieren",
+          "quantity": "Anzahl: ",
+          "actions": {
+            "open": "Öffnen",
+            "use": "Verwenden",
+            "useAll": "Alle verwenden",
+            "stop": "Aufhören"
+          }
+        },
+        "drops": {
+          "title": "Twitch-Drops",
+          "claim1": "Keine Geschenke? Denk daran, bei",
+          "claim2": "vorbeizuschauen, um sie abzuholen!",
+          "link1": "Verknüpfe dein Twitch-Konto",
+          "link2": "mit deinem Ankama-Account!"
+        }
+      },
+      "mobileConnection": {
+        "menu": "Mobile Verbindung",
+        "qrCode": {
+          "title": "Schnelle mobile Verbindung mit QR-Code",
+          "description": "1) Wähle unten den Account aus, den du mit der mobilen App verbinden möchtest. Generiere anschließend deinen einmaligen QR-Code*.<br/>2) Scanne diesen QR-Code mit deinem Smartphone auf dem Verbindungsbildschirm der mobilen App. Damit ist die Verbindung hergestellt.",
+          "chooseAccount": "Account auswählen",
+          "button": "Meinen QR-Code generieren",
+          "myQrCode": "Mein QR-Code",
+          "expiresIn": "Läuft in {time} Sek. ab"
+        },
+        "noHack": "*Um Hacking zu verhindern, <u>gib deine QR-Codes niemals weiter</u>. Dein vertraulicher QR-Code ist einmalig und zeitlich begrenzt."
+      }
+    },
+    "pseudo": {
+      "copy": "Kopieren",
+      "copied":"Kopiert!"
+    }
+  },
+  "login": {
+    "connectionTitle": "Serverwahl",
+    "addAccount": "",
+    "connectionOr": "oder",
+    "login": "Accountname",
+    "accountId": "Zugangsdaten / E-Mail-Adresse",
+    "accountIdInfo":" · Account <strong>vor</strong> dem 24. August 2021 erstellt: Account-Name<br>· Account <strong>nach</strong> dem 24. August 2021 erstellt: E-Mail-Adresse",
+    "password": "Passwort",
+    "confirmPassword": "Passwort bestätigen",
+    "incoherentPassword": "Die Passwörter stimmen nicht überein",
+    "forgottenPassword": "Passwort vergessen?",
+    "stayLoggedIn": "Angemeldet bleiben",
+    "forcedStayLoggedIn": "Die Zweitaccounts werden zeitgleich mit dem Hauptaccount abgemeldet.",
+    "rememberMe": "Login speichern",
+    "signIn": "Anmelden",
+    "cannotSignIn": "Anmeldung nicht möglich?",
+    "support": "Support kontaktieren",
+    "ghostCreation": "Erste Verbindung",
+    "providerAskMail": "Um unseren Dienst nutzen zu können, gib bitte deine E-Mail-Adresse an. Hierdurch kannst du deinen Account im Falle eines Problems über den Support wiederherstellen.",
+    "yes": "Ja",
+    "no": "Nein",
+    "facebook": "Mit Facebook anmelden",
+    "facebookLink": "Meinen Account verknüpfen",
+    "facebookGhost": "Mit Facebook fortfahren",
+    "facebookCancel": "Abbrechen",
+    "facebookChangeUser": "Benutzer wechseln",
+    "validateEmail": "E-Mail bestätigen",
+    "acceptCgu": "Indem du auf ‚Weiter‘ klickst, bestätigst du, dass du Folgendes gelesen, verstanden und akzeptiert hast.",
+    "subscribeNewsletter": "Ich möchte den ANKAMA-Newsletter erhalten.",
+    "cgu": "die Nutzungsbedingungen",
+    "policy": "die Datenschutzrichtlinien",
+    "help": "<h4>Login speichern</h4>Deine Benutzer-ID <strong>{login}</strong> wird gespeichert, aber dein Passwort zu Beginn jeder neuen Sitzung erneut abgefragt.<br><br><h4>Angemeldet bleiben</h4>Deine Login-Daten werden gespeichert und du wirst zu Beginn jeder neuen Sitzung automatisch angemeldet.",
+    "completeAccont": "Meinen Account fertigstellen",
+    "doubleAuth": {
+      "title": "Sicherheitscode",
+      "titleOtp": "Sicherung deiner Anmeldung",
+      "codeSent": "Wir haben einen Sicherheitscode an die folgende Adresse geschickt: {email}. Bitte gib diesen Code unten ein, um dich anzumelden.",
+      "otpExplain": "Um fortzufahren, musst du den Sicherheitscode eingeben, der von deiner mobilen App für die Zwei-Faktor-Authentifizierung generiert wurde.",
+      "codeSentGuest": "Wir haben einen Sicherheitscode an die angegebene Adresse geschickt. Bitte den folgenden Code eingeben, um deine E-Mail zu bestätigen.",
+      "resendCodeMail" : "Code erneut per E-Mail senden",
+      "resendCodeSms" : "Einen Code per SMS senden",
+      "smsCodeSended" : "Ein Code wurde dir per SMS gesendet.",
+      "enterCode": "______",
+      "unlock": "Bestätigen",
+      "codeResent": "Ein neuer Code wurde gesendet.",
+      "warnLockMail": "Du hast keinen Zugriff mehr auf deine E-Mails?",
+      "warnOtp": "Du hast keinen Zugriff mehr auf deine mobile App?",
+      "rememberThisDevice" : "Diesem PC vertrauen",
+      "whatIsRemembering" : "Auf diesem PC wird keine Zwei-Faktor-Authentifizierung mehr verlangt."
+    },
+    "guestEntry": "Gastzugang",
+    "guestLogin": "Gast-Sitzung fortsetzen",
+    "ankamaConnect": "Ankama-Verbindung",
+    "provider": {
+      "title": "Anmeldung mit {provider}",
+      "description": "Beim Anmeldeversuch ist ein Fehler aufgetreten.",
+      "webResponseTitle": "HERZLICHEN GLÜCKWUNSCH",
+      "webResponseDescription": "Jetzt kannst du dieses Fenster schließen und zum Launcher zurückkehren."
+    }
+  },
+  "news": {
+    "showOnline": "Online ansehen",
+    "all": "Alle",
+    "actualites": "<strong>News</strong> von {game}",
+    "crossover": "<strong>News</strong> von Ankama",
+    "similarNews": "Ähnliche <strong>News</strong>",
+    "ends": "Endet",
+    "dayShort" : "t",
+    "hourShort" : "st",
+    "minuteShort" : "m",
+    "secondShort" : "sek",
+    "share": "Teilen",
+    "zoom": "Zoom",
+    "copyDeepLink": "Link kopieren",
+    "shareFacebook": "Auf Facebook teilen",
+    "shareTwitter": "Auf Twitter teilen"
+  },
+  "notification": {
+    "confirm": "Bestätigen",
+    "cancel": "Abbrechen",
+    "accept": "Annehmen",
+    "reject": "Ablehnen",
+    "ignore": "Blockieren",
+    "unblock": "Freischalten",
+    "editName": "Umbenennen",
+    "delete": "Löschen",
+    "validate": "Bestätigen",
+    "group": "Gruppe",
+    "error": "Es ist ein Fehler aufgetreten.",
+    "information": "Information",
+    "watchLive": "Live ansehen",
+    "close": "Schließen",
+    "waitRelease": "Bitte warte, bis das Spiel verfügbar ist",
+    "cannotOpen": "Das Spiel kann nicht geöffnet werden",
+    "updateFinished": {
+      "title": "Download abgeschlossen",
+      "body": "{name} ist aktualisiert.",
+      "play": "Spielen",
+      "ok": "OK"
+    },
+    "closeAll": "Alles schließen",
+    "mute10": "Für 10 Minuten stumm schalten",
+    "mute60": "Für 1 Stunde stumm schalten",
+    "mute180":  "Für 3 Stunden stumm schalten",
+    "unmute": "Benachrichtigungen wieder aktivieren",
+    "launcher": "Launcher",
+    "hookError": {
+      "pre_update": "Bei der Aktualisierung ist ein Fehler aufgetreten.",
+      "post_update": "Bei der Aktualisierung ist ein Fehler aufgetreten.",
+      "settings_changed": "Es ist ein Fehler aufgetreten.",
+      "stop": "Beim Schließen des Spiels ist ein Fehler aufgetreten.",
+      "pre_uninstall": "Bei der Deinstallation ist ein Fehler aufgetreten.",
+      "pre_install": "Bei der Installation des Spiels ist ein Fehler aufgetreten.",
+      "no_space": "Auf der Festplatte ist nicht genug Speicherplatz vorhanden.",
+      "no_space_disk": "Nicht genug Speicherplatz vorhanden auf <strong>{diskName}</strong>",
+      "common": "Wir empfehlen dir, das Spiel zu reparieren oder den Support zu kontaktieren, falls das Problem weiterhin besteht.<br/>{errorMessage}"
+    }
+  },
+  "popup": {
+    "dataCollect": {
+      "title": "Sammeln von Spieldaten",
+      "description": "Im Rahmen der Verbesserung des Spielerlebnisses und für statistische Analysen werden bestimmte Daten gesammelt und an unseren Partner Gamesight übermittelt.<br/> Diese Daten werden zum Schutz deiner Privatsphäre anonymisiert, aber wir müssen dennoch dein Einverständnis einholen. Weitere Infos findest du in unserer Datenschutzrichtlinie.",
+      "btnCancel": "Ich lehne ab, meine Daten zu teilen",
+      "btnOk": "Ich stimme zu",
+      "error": "Deine Antwort kann nicht bestätigt werden. Bitte später erneut versuchen."
+    },
+    "fullName": {
+      "title": "Name und Vorname",
+      "explanationsAnkama": "Wenn du den Support bitten möchtest, einzugreifen, musst du diese Informationen angeben, um zu bestätigen, dass du wirklich der Inhaber folgendes Accounts bist: {login}.<br><br>Sie können nicht geändert werden und bleiben streng vertraulich. Daher bitten wir dich, die Daten genau zu überprüfen.",
+      "explanations": "Wenn du den Support bitten möchtest einzugreifen, musst du diese Informationen angeben, um zu bestätigen, dass du wirklich der Inhaber folgendes Accounts bist: .<br><br>Sie können nicht geändert werden und bleiben streng vertraulich. Daher bitten wir dich, die Daten genau zu überprüfen.",
+      "firstname": "Vorname",
+      "lastname": "Name",
+      "errorFirstname": "Bitte gib einen gültigen Vornamen ein.",
+      "errorLastname": "Bitte gib einen gültigen Nachnamen ein.",
+      "submit": "Bestätigen"
+    },
+    "error": {
+      "title": "Fehler",
+      "description": "Ein Fehler ist aufgetreten, der Launcher muss neu gestartet werden.",
+      "contactSupport": "Sollte das Problem bestehen bleiben, kontaktiere bitte den Support und leite deine Logdateien weiter.",
+      "button": "Launcher neu starten"
+    },
+    "authWarning": {
+      "title": "Achtung",
+      "description": "Zahlreiche Anmeldeversuche sind fehlgeschlagen. Es besteht das Risiko, dass deine IP-Adresse auf unserer schwarzen Anti-Bot-Liste landet.",
+      "contactSupport": "Du kannst dich nicht ins Spiel einloggen?",
+      "contactSupportLink": "Support kontaktieren",
+      "buttonLogin": "Meinen Accountnamen wiederherstellen",
+      "buttonPassword": "Mein Passwort ändern"
+    },
+    "authExpiredSession": {
+      "title": "Sitzung abgelaufen",
+      "description": "Die Sitzung des Accounts <strong>{pseudo}</strong> ist abgelaufen. Bitte melde dich erneut an.",
+      "descriptionPlural": "Die Sitzungen der Accounts <strong>{pseudo}</strong> sind abgelaufen. Bitte melde dich erneut an.",
+      "button": "Weiter"
+    },
+    "switchAccount": {
+      "title": "Account wechseln",
+      "description": "Um ein Abonnement mit einem Zweitaccount zu kaufen, musst du diesen als Hauptaccount festlegen.<br/>Möchtest du den Account „<span class=\"nickname\">{fullPseudo}</span>“ für deine Käufe verwenden?",
+      "btnConfirm": "Verstanden",
+      "btnSwitchAccount": "Account wechseln"
+    },
+    "badShortcut": {
+      "title": "Veralteter Shortcut",
+      "description": "Dieser Shortcut ist veraltet. Du kannst weiter unten einen neuen funktionierenden Shortcut erstellen.",
+      "button": "Einen Shortcut erstellen"
+    },
+    "logoutMultiAccount": {
+      "title": "Mehrere Accounts abmelden",
+      "description": "Du meldest dich gerade ab.<br/>Aus Sicherheitsgründen werden die Verbindungen aller deiner registrierten Zweitaccounts ebenfalls getrennt.",
+      "btnCancel": "Abbrechen",
+      "btnOk": "Abmelden"
+    },
+    "blockedByV2": {
+      "title": "Es ist bereits ein Ankama-Launcher geöffnet",
+      "description": "Auf diesem Computer wird bereits eine andere Instanz des Ankama-Launchers ausgeführt. Schließe sie, bevor du diese erneut startest.",
+      "btnOk": "OK"
+    },
+    "notStayLoggedMultiAccount": {
+      "title": "Mehrere Accounts schließen",
+      "description": "Du meldest dich gerade ab.<br/>Aus Sicherheitsgründen werden die Verbindungen aller deiner registrierten Zweitaccounts ebenfalls getrennt.",
+      "checkbox": "Angemeldet bleiben (Du wirst beim nächsten Start des Launchers automatisch angemeldet.)",
+      "btnCancel": "Abbrechen",
+      "btnOk": "Launcher schließen"
+    },
+    "trayAtCloseChoicePopup": {
+      "title": "Schließung des Launchers",
+      "description": "Möchtest du den Launcher in die Anzeigeleiste minimieren, um ihn schneller erneut starten zu können, oder ihn schließen?",
+      "btnCancel": "Launcher schließen",
+      "btnOk": "Launcher minimieren"
+    },
+    "trayAtMinimizeChoicePopup": {
+      "title": "Launcher minimieren",
+      "description": "Möchtest du den Launcher in die Anzeigeleiste oder in die Taskleiste minimieren?",
+      "btnNotification": "Anzeigeleiste",
+      "btnTask": "Taskleiste"
+    },
+    "closeWhenGameLaunchedPopup": {
+      "title": "Schließung des Launchers",
+      "description": "Solange das Spiel läuft, kann der Launcher nicht geschlossen werden.<br />Du kannst ihn in den Infobereich minimieren, um die Leistung deines Rechners zu optimieren.",
+      "btnOk": "In die Anzeigeleiste minimieren",
+      "btnCancel": "Abbrechen"
+    },
+    "banCloudflarePopup": {
+      "title": "Zugang verweigert",
+      "description": "Zugang vorübergehend verweigert.<br/>Bitte warte zehn Minuten, bevor du den Launcher in vollem Umfang nutzen kannst."
+    },
+    "shareLink": {
+      "title": "Link zur Seite",
+      "deeplink": "Deeplink: <br/><strong>{deeplink}</strong>"
+    },
+    "accountErrored": {
+      "title": "Account-Sitzung abgelaufen",
+      "description": "Die Sitzung des Accounts <strong>{username}</strong> ist abgelaufen. Bitte stelle die Verbindung wieder her:",
+      "btnOk": "Account erneut verbinden",
+      "btnCancel": "Account abmelden",
+      "titleMissingInformation": "Gast-Account registrieren",
+      "missingInformation": "Diese Aktion ist über deinen Gast-Account nicht möglich. Um auf diesen Dienst zugreifen zu können, vervollständige bitte die Angaben des Accounts {pseudo}."
+    },
+    "webtoonUnlockEpisodePopup": {
+      "unlockablesEpisodes": "1 Folge zum Freischalten",
+      "unlockablesEpisodes_plural": "{count} Folgen zum Freischalten",
+      "explanation": "Du schaltest gerade <strong> die Folge {from}</strong> für <span class='color'><strong>1</strong></span> frei.",
+      "explanation_plural": "Du schaltest gerade <strong>die Folgen {from} bis {to}</strong> für <span class='color'><strong>{count}</strong></span> frei.",
+      "explanationNotEnoughToken": "Du hast keine Folge in Reserve, um diese Folge freizuschalten und zu lesen. Du kannst <strong>Folgen im Shop kaufen</strong>.",
+      "addEpisodeToUnlock": "Folge {episodeNumber} hinzufügen",
+      "removeEpisodeToUnlock": "Folge {episodeNumber} entfernen",
+      "unableToUnlock": "Diese Folge kann nicht freigeschaltet werden",
+      "btnOk": "Folge freischalten und lesen",
+      "btnOk_plural": "Folgen freischalten und lesen",
+      "btnBuyEpisode":"Zu den Paketen",
+      "quickUnlock": "<b>Schnelles Freischalten</b> der Folgen",
+      "selectMoreEpisodes": "Du kannst mehrere Folgen auswählen, um sie gleichzeitig freizuschalten!",
+      "noMoreWebtoonTokens": "Nicht genug Folgen in Reserve. Du kannst Pakete im Shop kaufen oder weniger Folgen auswählen.",
+      "noMoreWebtoonTokens_mini": "Nicht genug Folgen in Reserve",
+      "unlockTooltip": "Mit dieser Option schaltest du deine Folgen mit einem Klick frei!"
+    },
+    "webtoonQuickUnlockPopup": {
+      "title": "Schnelles Freischalten der Folgen",
+      "subTitle": "Schalte deine Folgen mit einem Klick frei!",
+      "explanationUnlockOne": "Wenn du diese Option wählst, akzeptierst du, dass deine Folgenreserve automatisch um <b class='color'>1</b> belastet wird.",
+      "explanationUnlockTwo": "wenn du auf eine kostenpflichtige Folge klickst, ungeachtet der Serie!",
+      "buttonUnlock": "Verstanden und bestätigt",
+      "buttonCancel": "Abbrechen"
+    },
+    "resultCodePopup": {
+      "title": "Glückwunsch!",
+      "subtitle": "Du hast {resultName} erhalten!",
+      "back": "Zurück zu Geschenken",
+      "goToGifts": "Meine Geschenke aufrufen"
+    },
+    "lotteryPrizePopup": {
+      "title": "Geschenk erhalten!",
+      "description": "Du hast  <span class=\"gift\">{prizeName}</span> erhalten!\nDieses Geschenk ist an deinen Account <span class=\"account\">{accountName}</span> gebunden.",
+      "ok": "Verstanden"
+    },
+    "lotteryTutoPopup": {
+      "next": "Weiter"
+    },
+    "openBlindbox": {
+      "subtitle": "Du hast {rarity} erhalten:<br/><b>{resultName}</b>!",
+      "rarity": {
+        "COMMON": "einen <span class=\"rarity\">gewöhnlichen</span> Gegenstand",
+        "UNCOMMON": "einen <span class=\"rarity\">ungewöhnlichen</span> Gegenstand",
+        "RARE": "einen <span class=\"rarity\">seltenen</span> Gegenstand",
+        "EPIC": "einen <span class=\"rarity\">epischen</span> Gegenstand",
+        "LEGENDARY": "einen <span class=\"rarity\">legendären</span> Gegenstand"
+      },
+      "skipAnim": "Animation überspringen (Leertaste)",
+      "openNext": "Nächste Kiste öffnen ({nbr})",
+      "error": "Beim Öffnen des Geschenks ist ein Fehler aufgetreten."
+    },
+    "failedToOpenExternal": {
+      "title": "dein Browser kann nicht geöffnet werden",
+      "description": "Wir haben keinen automatischen Zugriff auf deinen Browser. Diesen Link bitte in die Adressleiste deines Internetbrowsers kopieren/einfügen.",
+      "close": "Verstanden",
+      "copy": "Kopieren",
+      "copied":"Kopiert!"
+    },
+    "updateOS": {
+      "title": "Update erforderlich",
+      "notCompatible": "Dein Betriebssystem ist mit {gameName} nicht kompatibel.",
+      "minSpecs": "Um diese Spielversion nutzen zu können, musst du dein System aktualisieren, damit es die <b>Mindestanforderungen erfüllt</b>.",
+      "minConfigs": "Mindestanforderungen anzeigen",
+      "moreOnForum": "Mehr darüber im Forum erfahren",
+      "retryLater": "Später erneut versuchen",
+      "ignoreThis": "In dieser Sitzung ignorieren"
+    }
+  },
+  "rgpd": {
+    "pending": {
+      "title": "Anmeldung ausstehend",
+      "message": "Deine Anmeldung muss noch von einem Elternteil oder einem gesetzlichen Vormund bestätigt werden. Die Spiele sind bis dahin nicht verfügbar. Du kannst die E-Mail erneut an einen Elternteil oder Erziehungsberechtigten senden.",
+      "resend": "E-Mail erneut senden"
+    },
+    "refused": {
+      "title": "Anmeldung abgelehnt",
+      "message": "Du kannst nicht auf die Spiele zugreifen. Dein Elternteil oder dein gesetzlicher Vormund hat deine Anmeldung abgelehnt.",
+      "close": "Schließen"
+    }
+  },
+  "release": {
+    "error": {
+      "cannotCreateTmpFolder": "Es ist nicht möglich, ein temporäres Verzeichnis zu erstellen. {error}",
+      "cannotGetInstallInformation": "Es ist nicht möglich, die Installationsinformationen herunterzuladen. Bitte überprüfe die Internetverbindung oder die Netzwerkkonfiguration (Firewall, Proxy usw.).",
+      "cannotInstallInANonEmptyFolder": "Der ausgewählte Ordner ist nicht verfügbar.",
+      "cannotInstallReadWritePermissions": "Du besitzt keine Zugriffsrechte auf diesen Ordner.",
+      "cannotInstallNotEnoughSpace": "Nicht genügend freier Speicherplatz.",
+      "cannotCreateDestinationFolder": "Ordner kann nicht erstellt werden.",
+      "cannotInstallInFolderOfAnotherGame": "Es ist nicht möglich, das Spiel in einem anderen Spielverzeichnis zu installieren.",
+      "cannotInstallInNonExistingFolder": "Der ausgewählte Ordner existiert nicht.",
+      "cannotInstallLocationIsNotAFolder": "Der angegebene Pfad ist kein Ordner.",
+      "cannotMoveNotInstalled": "Die Installation muss abgeschlossen sein, bevor du das Spiel verschieben kannst.",
+      "cannotMoveWhileMoving": "Das Spiel wird bereits verschoben.",
+      "cannotMoveSameFolder": "Das Zielverzeichnis entspricht dem aktuellen Verzeichnis.",
+      "cannotMoveReadWritePermissions": "Du besitzt keine Zugriffsrechte für diesen Ordner.",
+      "cannotStartTeasing": "Du hast nicht die Berechtigungen, um dieses Spiel zu starten.",
+      "cannotMoveWhileUpdating": "Das Spiel wird aktualisiert.",
+      "cannotMoveWhileRunning": "Das Spiel wird ausgeführt.",
+      "cannotMoveNotEnoughSpace": "Nicht genügend freier Speicherplatz.",
+      "cannotUpdate": "Bei der Aktualisierung des Spiels ist ein Fehler aufgetreten. Bitte versuche es noch einmal.",
+      "cannotUpdateNoLocation": "Es wurde kein Zielort angegeben.",
+      "cannotUpdateOffline": "Dein PC ist nicht mit dem Internet verbunden.",
+      "cannotUpdateGameIsRunning": "Es läuft bereits eine Spielinstanz.",
+      "cannotUpdateAlreadyRunning": "Es wird gerade ein Update ausgeführt.",
+      "cannotUpdateReleaseIsMoving": "Das Spiel wird gerade verschoben.",
+      "cannotRepair": "Bei der Reparatur des Spiels ist ein Fehler aufgetreten. Bitte versuche es noch einmal.",
+      "cannotStartNotInstalled": "Das Spiel ist nicht installiert.",
+      "cannotStartWhileUpdating": "Es wird gerade ein Update ausgeführt.",
+      "cannotStartUpdateAvailable": "Ein Update ist verfügbar.",
+      "cannotStartMaxInstancesReached": "Es läuft bereits die maximale Anzahl an Spielinstanzen.",
+      "cannotStartReleaseIsMoving": "Das Spiel wird gerade verschoben.",
+      "cannotUpdateCytrusVersionNotHandled": "Die Version dieses Spiels ist nicht mit deiner Version des Ankama Launchers kompatibel.",
+      "gameNotExist" : "Das gewünschte Spiel existiert nicht.",
+      "cannotUninstallWhileRunning": "Das Spiel kann nicht deinstalliert werden, da eine Instanz läuft."
+    },
+    "cloudSaving": {
+      "title": "Speicherstand-Wiederherstellung",
+      "explanation": "Dein lokaler Speicherstand <b>unterscheidet sich</b> von deinem Online-Speicherstand.",
+      "titleSelect": "Wähle den Speicherstand, den du <b>behalten</b> möchtest:",
+      "source": "Quelle",
+      "localisation": "Ort",
+      "saveDate": "Datum",
+      "local": "Dieser PC",
+      "distant": "Online",
+      "alwaysKeepLatest" : "Immer die aktuellere Version behalten.",
+      "choose": "auswählen",
+      "warnOverride": "Achtung, wenn du das Spiel schließt, wird der Online-Speicherstand durch deinen lokalen Fortschritt überschrieben."
+    }
+  },
+  "releaseActionBar": {
+    "buy": "Kaufen für {price}",
+    "preBuy": "Vorbestellen für {price}",
+    "discount": "Preis für Abonnenten <strong>{discountPrice} statt <del>{totalPrice}</del></strong>",
+    "gameNotAvailableFor32bitsVersion": "Das Spiel ist nicht als 32-Bit-Version verfügbar.",
+    "gameNotAvailable": "Dieses Spiel ist nicht verfügbar",
+    "install": "{game} installieren",
+    "installing": "Download/Installation läuft ...",
+    "details": "Details",
+    "launch": "Starten",
+    "launching": "Wird gestartet …",
+    "moving": "Verschieben der Dateien ...",
+    "no": "Nein",
+    "noAccountAvailable": "Kein Account verfügbar. Du kannst einen Account über die Spieloptionen hinzufügen.",
+    "play": "Spielen",
+    "pause": "Pause",
+    "paused": "Pausiert",
+    "playing": "Wird ausgeführt …",
+    "quitBeforeInstall": "Du musst das Spiel schließen, um es zu aktualisieren.",
+    "resume" : "Neu starten",
+    "repair": "Wiederherstellen",
+    "resumeInstall": "Installation fortsetzen",
+    "runningInstances": "{runningInstancesCount} Instanzen werden ausgeführt …",
+    "setPriority": "Bevorzugen",
+    "serverOff": "Der Spieleserver ist derzeit nicht verfügbar.",
+    "preOrder": "Du kannst dieses Spiel ab dem {date} spielen.",
+    "teasing": "Zugriff eingeschränkt",
+    "update": "Aktualisieren ({version})",
+    "updating": "Update wird ausgeführt ...",
+    "yes": "Ja",
+    "inGame": "im Spiel",
+    "friendInGame": "{count} Freund",
+    "friendInGame_plural": "{count} Freunde",
+    "fetching": "Verbindung mit dem Krosmoz",
+    "healthcare": "Serverstatus",
+    "coServer": "Verbindungsserver",
+    "updateInfo": {
+      "remainingFiles": "Verbleibende Dateien: {remainingFiles}",
+      "download": "Download:",
+      "install": "Installation:",
+      "speed": "Geschwindigkeit:",
+      "perSec": "/Sek."
+    },
+    "serversStatus": {
+      "Maintenance": "Wird gewartet",
+      "Up": "Offen",
+      "Down": "Geschlossen",
+      "Unknown": "Status unbekannt",
+      "Unstable": "Instabil"
+    },
+    "ignoredTerms": "In dieser Sitzung ignorierte Startbedingungen"
+  },
+  "releaseInstall": {
+    "install": "Installation",
+    "selectInstall": "Lege den Speicherordner fest",
+    "folderAlreadyUsed": "Anscheinend wird dieser Ordner bereits von einem anderen Spiel verwendet",
+    "notAGameFolder": "Der gewählte Speicherort ist anscheinend kein Spielordner",
+    "chooseInstallFolder": "Bitte gib den Zielordner an, in dem folgendes Spiel installiert werden soll: {gameName}.",
+    "selectFolder": "Diesen Ordner auswählen",
+    "space": {
+      "required": "{space} erforderlich",
+      "free": "{space} verfügbar",
+      "freeError": "Es ist nicht möglich, den freien Speicherplatz zu berechnen."
+    },
+    "cancelButton": "Abbrechen",
+    "installButton": "Installieren",
+    "uninstallfavoris":"Favoriten löschen",
+    "uninstall":"Deinstallieren",
+    "updatedownload":"Aktualisieren",
+    "browseFolder": "Die Ordner durchsuchen",
+    "alreadyDownloaded": "Bereits heruntergeladen?",
+    "browse": "Durchsuchen"
+  },
+  "releaseSettings": {
+    "title": "Spieloptionen",
+    "general": {
+      "title": "Allgemeines",
+      "autoUpgrade": "Automatische Updates",
+      "autoUpgradeExplain": "Automatische Updates des Spiels aktivieren.",
+      "autoResolveCloudSaveConflicts": "Online-Speicherstand: Immer die aktuellste Version behalten.",
+      "autoResolveCloudSaveConflictsExplain": "Wenn der Spielfortschritt automatisch wiederhergestellt wird, wird im Fall eines Konflikts zwischen einem lokalen Speicherstand und einem Online-Speicherstand die aktuellste Version beibehalten.",
+      "repairTitle": "Wiederherstellung",
+      "repairExplanation": "Wenn das Spiel nicht richtig funktioniert, kann eine Wiederherstellung das Problem beheben, indem die Spieledateien auf deinem PC überprüft werden.",
+      "repair": "Reparatur starten",
+      "createShortcutTitle": "Shortcut",
+      "createShortcutExplanation": "Einen Shortcut im gewünschten Ordner erstellen.",
+      "createShortcut": "Einen Shortcut erstellen",
+      "uninstallTitle": "Deinstallation",
+      "uninstallExplanation": "Installationsordner und Shortcuts des Spiels löschen.",
+      "uninstall": "{fullGameName} deinstallieren"
+    },
+    "accounts": {
+      "title": "Multi-Account",
+      "addAccount": "Einen Account hinzufügen",
+      "addAccountExplain": "Jeder angemeldete Account wird zu deiner Account-Liste weiter unten hinzugefügt.",
+      "addAccountExplain2": "Um deine Nebenaccounts automatisch zu verbinden, musst du die Option „Angemeldet bleiben“ auf der Login-Seite auswählen. Beim Abmelden werden die Verbindungen und die Verknüpfung aller Accounts zum Hauptaccount getrennt.",
+      "addAccountExplain3": "Sobald dein Account hinzugefügt wurde, kannst du den Account über das Aufklappmenü unter deinem Avatar in der Accountverwaltung wechseln.",
+      "addAccountExplain4": "Der Chat wird automatisch aktualisiert und deine Käufe aus dem Shop werden dem angewählten Account zugewiesen.",
+      "accountListTitle": "Accounts verwalten",
+      "accountListExplain": "Du kannst jeden Account unten aktivieren oder deaktivieren. Nur aktivierte Accounts können über die Schaltfläche SPIELEN oder das Tastenkürzel Strg + NUM gestartet werden.",
+      "or": "oder",
+      "quickStart": "Schnellstart",
+      "quickStartExplain": "Hier kannst du das Spiel gemäß den Einstellungen unten starten.",
+      "configurePlayButton": "Die Schaltfläche SPIELEN konfigurieren",
+      "configurePlayButtonExplain": "Du kannst die Funktion der Schaltfläche SPIELEN über die Spielseite bearbeiten.",
+      "queueMode": "Modus: Eins nach dem anderen (Standard)",
+      "queueModeExplain1": "Die Schaltfläche SPIELEN startet die Spielinstanzen eine nach der anderen mit meinen",
+      "queueModeExplain2": "aktivierte Accounts",
+      "queueModeExplain3": ", in der Reihenfolge meiner Liste.",
+      "allMode": "Modus: Alle meine Accounts",
+      "allModeExplain1": "Die Schaltfläche SPIELEN startet gleichzeitig so viele Spielinstanzen wie sich",
+      "allModeExplain2": "aktivierte Accounts",
+      "allModeExplain3": "auf meiner Liste befinden.",
+      "offlineMode": "Modus: Offline",
+      "offlineModeExplain": "Die Schaltfläche SPIELEN startet das Spiel, ohne dass du angemeldet wirst."
+    },
+    "avatar":{
+      "userAvatar": "Dein Avatar",
+      "userAvatarExplain" : "Dein Avatar ist öffentlich und im Chat sowie in den Foren sichtbar.",
+      "universeChoice": "Universum wählen",
+      "universeChoiceExplain" : "Du kannst deinen Avatar aus tausenden Portraits wählen, die nach Universum gruppiert sind!",
+      "galleryChoice": "Galerie wählen",
+      "avatarChoice": "Avatar wählen",
+      "cancelAvatar": "Abbrechen",
+      "submitAvatar": "Bestätigen",
+      "selectAvatar": "Auswählen",
+      "noAvatarAvailable": "In dieser Galerie ist kein Avatar verfügbar."
+    },
+    "releases": {
+      "mainVersion": "Hauptversion"
+    },
+    "folder": {
+      "title": "Spieleverzeichnis",
+      "openGameFolder": "Spieleordner öffnen",
+      "gameFolder": "Spieleordner",
+      "gameFolderExplain": "Ermöglicht Zugriff auf Spieleordner.",
+      "openLogsFolder": "Ordner der Logdateien öffnen",
+      "logsFolder": "Ordner der Logdateien",
+      "logsFolderExplain": "Ermöglicht Zugriff auf Ordner der Logdateien Bei einer Support-Anfrage und falls Logdateien vorhanden sind, kannst du sie deinen Bug-Berichten anhängen.",
+      "move": "Installationsverzeichnis ändern",
+      "moveExplain": "Installationsverzeichnis",
+      "moveButton": "Das Spiel verschieben",
+      "space": {
+        "required": "Benötigter Festplattenspeicher:",
+        "free": "Freier Festplattenspeicher:",
+        "sameDisk": "(gleiche Festplatte)"
+      },
+      "moving": "Wird verschoben …",
+      "success": "Verschiebung erfolgreich abgeschlossen."
+    },
+    "license": {
+      "title": "Lizenzen"
+    }
+  },
+  "releaseUninstall": {
+    "uninstalling": "Deinstallation",
+    "sentence": "Du bist dabei, folgendes Spiel zu deinstallieren: {releaseName}. Willst du wirklich fortfahren?",
+    "cancelButton": "Abbrechen",
+    "uninstallButton": "Deinstallieren",
+    "deleteConfirmation": "Das Spiel wurde erfolgreich deinstalliert."
+  },
+  "releaseView": {
+    "changelog": "Patch Notes",
+    "shop": "Shop",
+    "forum": "Forum",
+    "info": "Informationen",
+    "options": "Optionen",
+    "cancel": "Abbrechen",
+    "actualite": "Aktuelles",
+    "knowMore": "Mehr erfahren",
+    "settings": "Spieloptionen",
+    "settingsUpdating": "Während der Aktualisierung nicht verfügbar",
+    "version": "Spielversion",
+    "moreNews": "+ News",
+    "installedVersion": "Installierte Version",
+    "availableVersion": "Verfügbare Version",
+    "availableUpdate": "Update verfügbar",
+    "availableSoon": "In Kürze verfügbar",
+    "downloadable": " Installation verfügbar",
+    "installInProgress": "Installation läuft …",
+    "updateInProgress": "Update wird ausgeführt ...",
+    "popularGames": "<strong>Beliebte</strong> Spiele",
+    "yourInstalledGames": "<strong>Installierte</strong> Spiele",
+    "allGames": "<strong>Alle</strong> Spiele",
+    "gameConfiguration": {
+      "minimum": "Minimum",
+      "recommended": "Empfohlen",
+      "os": "Betriebssystem:",
+      "cpu": "Prozessor:",
+      "ram": "Arbeitsspeicher:",
+      "gpu": "Grafikkarte:",
+      "vram": "VRAM",
+      "disk": "Festplattenspeicher:",
+      "note": "Hinweis:"
+    }
+  },
+  "releaseShortcut": {
+    "title": "Einen Shortcut erstellen",
+    "filterName": "Shortcut"
+  },
+  "scriptSpawn": {
+    "error": {
+      "unableToSpawnScript": "Folgendes Skript kann nicht gestartet werden: {scriptName}."
+    }
+  },
+  "systray": {
+    "open": "{appName} öffnen",
+    "parameters": "Einstellungen ...",
+    "checkUpdates": "Nach Updates suchen",
+    "exit": "{appName} schließen",
+    "about": "Über {appName}",
+    "preferences": "Präferenzen ...",
+    "hide": "{appName} ausblenden",
+    "hideOthers": "Andere ausblenden",
+    "unhide": "Alles anzeigen",
+    "edit": "Bearbeiten",
+    "undo": "Abbrechen",
+    "redo": "Wiederherstellen",
+    "cut": "Ausschneiden",
+    "copy": "Kopieren",
+    "paste": "Einfügen",
+    "delete": "Löschen",
+    "selectAll": "Alles auswählen",
+    "view": "Visualisieren",
+    "reload": "Aktualisieren",
+    "toggleFullScreen": "Vollbildmodus aktivieren",
+    "window": "Fenster",
+    "minimize": "Verkleinern",
+    "zoom": "Vergrößern",
+    "close": "Fenster schließen",
+    "help": "Hilfe"
+  },
+  "terms": {
+    "title": "Allgemeine Nutzungsbedingungen",
+    "accept": "Annehmen",
+    "reject": "Ablehnen"
+  },
+  "pip": {
+    "detachPlayer": "Player trennen",
+    "reattachPlayer": "Player verbinden"
+  },
+  "video": {
+    "menu": {
+      "home": "Startseite",
+      "downloads": "Downloads",
+      "latests": "Letzte Ergänzungen",
+      "popular": "Aktueller Erfolg",
+      "history": "Verlauf",
+      "watchLater": "Später ansehen",
+      "favorites": "Favoriten"
+    },
+    "player": {
+      "audioTracks": "Sprachen",
+      "closedCaptions": "Untertitel",
+      "quality": "Qualität",
+      "fullscreen": "Vollbildmodus",
+      "exitFullscreen": "Vollbildmodus verlassen",
+      "settings": "Einstellungen",
+      "skipGeneric": "Abspann überspringen",
+      "goToNext": "nächste Folge"
+    },
+    "error": {
+      "inMaintenance": "Es ist ein Fehler aufgetreten.",
+      "comingBackSoon": "Wir sind bald<br />wieder zurück!",
+      "comeBackLater": "Es ist ein technischer Fehler aufgetreten. Bitte versuche es später erneut.",
+      "deleteHistoryFail": "Verlauf kann nicht gelöscht werden.",
+      "contactSupport": "Bitte versuche es später noch einmal.<br/>Falls das Problem weiterhin besteht, wende dich an den Support und übermittele deine Logdateien.",
+      "contactSupportLink": "Support kontaktieren",
+      "refresh": "Aktualisieren"
+    },
+    "home": {
+      "watch": "Ansehen",
+      "watchNow": "Jetzt ansehen",
+      "history": "Mein Verlauf"
+    },
+    "details": {
+      "noCountryAvailable": "Tut uns leid, diese Inhalte sind in diesem geografischen Gebiet derzeit nicht verfügbar",
+      "season": "Staffel",
+      "seasons": "Staffeln",
+      "views": "Angesehen",
+      "playing": "Wird abgespielt ...",
+      "autoPlay": "Automatische Wiedergabe",
+      "synopsisLabel": "Zusammenfassung: {synopsis}",
+      "watchSeries": "Serie ansehen",
+      "watchMovie": "Film ansehen",
+      "resumePlay": "Abspielen fortsetzen",
+      "rentSeason": "Staffel {nb} LEIHEN {price}",
+      "rentMovie": "Film LEIHEN {price}",
+      "rentNoArticle": "Kein Artikel für den Verleih auffindbar",
+      "buySeason": "Staffel {nb} KAUFEN {price}",
+      "buyMovie": "Film KAUFEN {price}",
+      "movieGalleryTitle": "Film & Bonus",
+      "freeAccess": "Für Abonnenten kostenlos",
+      "menu": "Menü",
+      "share": "Teilen",
+      "play": "Wiedergeben",
+      "unlock": "Freischalten",
+      "nextEpisode": "<strong>nächste</strong> Folge",
+      "previousEpisode": "<strong>vorherige</strong> Folge",
+      "deleteFromHistory": "Verlauf löschen",
+      "synopsis": "Zusammenfassung",
+      "soundtracks": "Audiospuren:",
+      "subtitles": "Untertitel:",
+      "invertSort" : "Reihenfolge umkehren",
+      "noDataAvailable": "Kein Video verfügbar.",
+      "episodesCount": "Folgenanzahl:",
+      "releaseDate" : "Veröffentlichungsdatum:",
+      "info": "Informationen",
+      "theFilm": "Der Film",
+      "new": "Neu!",
+      "soon": "In Kürze ...",
+      "availableThe": "Verfügbar am <strong>{time}</strong>",
+      "articlesList": "Staffel kaufen"
+    },
+    "terms": {
+      "title": "Nutzungsbedingungen"
+    },
+    "subscribePopin": {
+      "title": "Nur für Abonnenten",
+      "content": "Um dieses Video abspielen zu können, musst du ein Dofus-Abo haben oder im Wakfu-Booster sein.",
+      "shopBtn": "Zum Shop",
+      "shouldUpdateStatus": "Wenn du gerade ein Abonnement abgeschlossen hast, klicke auf die Schaltfläche hier unten, um deinen Status zu aktualisieren."
+    },
+    "template": {
+      "history": "<strong>Du hast begonnen mit ...</strong>",
+      "serie": "<strong>{title}</strong>",
+      "actus": "<strong>News</strong> von VOD"
+    },
+    "unavailablePopup": {
+      "title": "Video nicht verfügbar",
+      "content": "Dieses Video ist nicht verfügbar.",
+      "ok": "OK"
+    },
+    "accessInformation": {
+      "buy": "Kaufen",
+      "rent": "Verleih",
+      "buyOrRent": "Kaufen oder Leihen",
+      "hoursRemaining": "{hours} verbleibende Stunde",
+      "hoursRemaining_plural": "{hours} verbleibende Stunden",
+      "daysRemaining": "{days} verbleibender Tag",
+      "daysRemaining_plural": "{days} verbleibende Tage"
+    }
+  },
+  "notificationWallpaperError": {
+    "btnOK": "Schließen",
+    "title": "Download-Fehler",
+    "message": "Beim Download ist ein Fehler aufgetreten, bitte versuche es noch einmal"
+  },
+  "notificationWebtoon": {
+    "btnOK": "Bestätigen",
+    "btnCancel": "Abbrechen",
+    "title": "Bestätigung",
+    "message": "Die Bestätigung dieser Aktion führt zum Verlust deiner Mehrfachauswahl"
+  },
+  "stream": {
+    "login": "Anmelden",
+    "logout": "Abmelden",
+    "notificationLivestream":{
+      "title": "{channel} ist live!"
+    },
+    "chat": {
+      "login": "Anmelden",
+      "logout": "Abmelden"
+    },
+    "error": {
+      "unavailable": "Das Streaming ist <strong>derzeit nicht verfügbar</strong>."
+    },
+    "galleryTitles": {
+      "ankamalive": "<strong>Ankama Live</strong> Bisherige Sendungen",
+      "livestreams": "Ausgewählte <strong>Streamer</strong>",
+      "gameStreams": "Laufende Streams von <strong>{game}</strong>"
+    },
+    "vignette": {
+      "startedAt": "Begonnen um {time}",
+      "moreReplays": "Weitere Replays"
+    },
+    "duration" : "Dauer",
+    "lang": "Sprachen",
+    "noStreamAvailable": "Es ist kein Stream in der ausgewählten Sprache verfügbar."
+  },
+  "shop": {
+    "welcome": "Herzlich willkommen!",
+    "or": "oder",
+    "authenticate": "Authentifizieren",
+    "subscribe": "Abonnieren",
+    "getit": "Erhalten",
+    "confirm": "Bestätigen",
+    "purchase": "Kaufen",
+    "purchaseWithCurrency": "In {currency} kaufen",
+    "back": "Zurück",
+    "continue": "Meinen Einkauf fortsetzen",
+    "included": "Inhalt",
+    "willPurchase": "Du hast diesen Artikel für {price} gekauft.",
+    "buyOgrins": "Ogrinen kaufen",
+    "onlineShop": "Online-Shop von {gameName}",
+    "cantFindArticle": "Artikel kann nicht gefunden werden. Bitte versuche es später noch einmal.",
+    "promo": "Aktion",
+    "promotion": "Aktion",
+    "purchaseStatus": {
+      "congratulations": "Herzlichen Glückwunsch!",
+      "errorOccured": "Ein Fehler ist aufgetreten!",
+      "processed": "Du hast folgenden Artikel freigeschaltet: {articleName}. Melde dich im Spiel an, um davon zu profitieren!",
+      "pending": "Dein Einkauf wurde erfolgreich abgeschlossen, aber die Bestätigung für folgenden Artikel steht noch aus: {articleName}.",
+      "error": "Beim Kauf des folgenden Artikels ist ein Fehler aufgetreten: {articleName}.",
+      "notEnoughMoney": "Du hast nicht genug Ogrinen, um folgenden Artikel zu kaufen: {articleName}.",
+      "other": "Beim Kauf des folgenden Artikels ist ein Fehler aufgetreten: {articleName}. Bitte versuche es später noch einmal."
+    },
+    "confirmAccountPurchase": {
+      "description": "Dieser Kauf wird dir auf dem Account „<span class=\"nickname\">{fullPseudo}</span>“ gutgeschrieben.",
+      "acceptButton": "Verstanden"
+    },
+    "exit": {
+      "title": "Bestätigung",
+      "message": "Wenn du den Shop verlässt, wird dein Warenkorb geleert.",
+      "close": "Verlassen",
+      "cancel": "Abbrechen"
+    },
+    "kard": {
+      "common": "Gewöhnlich",
+      "uncommon": "Ungewöhnlich",
+      "rare": "Selten",
+      "epic": "Episch",
+      "legendary": "Legendär"
+    },
+    "errors": {
+      "notEnoughOgrins": "Du hast nicht genug Ogrinen.",
+      "invalidShopApiKey": "Aus <strong>Sicherheitsgründen</strong><br>musst du dich anmelden.",
+      "internalServerError": "Dein bevorzugter Händler ist <strong>im Moment nicht verfügbar</strong>. Versuche es bitte später noch einmal.",
+      "ReferenceTypeNotSupported": "Eine Referenz in diesem Artikel wird vom Launcher nicht unterstützt."
+    },
+    "kerubim": {
+      "comeBackSoon": "Ich bin<br>bald zurück!",
+      "wakeUpFailure": "Wecker<br>kaputt ...",
+      "kibbleShortage": "Bin was<br>futtern ...",
+      "pressingDesire": "Ein dringendes<br>Bedürfnis ...",
+      "forgottenKeys": "Schlüssel<br>vergessen ...",
+      "inInventary": "Mache gerade<br>Inventur ..."
+    },
+    "section": {
+      "webtoon": {
+        "title": "Webtoon-Folgen-Pakete",
+        "specialOffers": "Sonderangebote"
+      }
+    },
+    "flag": {
+      "FAVOURITE": "Favorit",
+      "LOW_PRICE": "Kleine Preise",
+      "LIMITED_DURATION": "Begrenzt verfügbar",
+      "TOP_SELLERS": "TOP Verkauf",
+      "NEW": "Neuheit",
+      "ARTICLE_FREE": "Gratis",
+      "SUMMER_SALES": "Sommerschlussverkauf",
+      "FLASH_SALE": "Blitzverkauf",
+      "WINTER_SALES": "Winterschlussverkauf",
+      "MOST_ECONOMICAL": "Günstigere Preise",
+      "SPECIAL_OFFER": "Sonderangebot",
+      "TEMPORIS": "Temporis-Verleih",
+      "EXPEDITIONS": "Expeditionen",
+      "BLACK_FRIDAY": "Black Friday",
+      "PRE_ORDER": "Vorbestellung"
+    },
+    "noPaypal": "PayPal für den Ankama Launcher und den Shop im Spiel wird gerade gewartet, funktioniert aber auf"
+  },
+  "zaapAutoUpdate": {
+    "forceUpdate": "Schließe bitte die Spiele, um zu überprüfen, ob das Update korrekt installiert wurde.",
+    "updateRequired": "Update erforderlich",
+    "restartIn": "Neustart in {count} Sekunde …",
+    "restartIn_plural": "Neustart in {count} Sekunden …",
+    "restarting": "Neustart …",
+    "delayUpdate": "Später",
+    "restartNow": "Aktualisieren",
+    "updating": "Update wird ausgeführt ...",
+    "installing": "Update wird installiert ...",
+    "willRestartAutomatically": "Der Ankama Launcher wird automatisch neu gestartet, um das Update zu installieren."
+  },
+  "zaapSettings": {
+    "title": "Einstellungen",
+    "general": {
+      "title": "Allgemeines",
+      "language": "Sprache",
+      "interfaceSize": "Größe der Benutzeroberfläche",
+      "interfaceSizeExplain": "Ändert die Größe aller Komponenten des Launchers: Schaltflächen, Schrift …",
+      "languageExplain": "Die im Launcher verwendete Sprache.",
+      "launchAtStartup": "Beim Hochfahren des Computers ausführen",
+      "launchAtStartupExplain": "Den Ankama Launcher beim Hochfahren dieses Computers starten.",
+      "stayLoggedIn": "Angemeldet bleiben",
+      "stayLoggedInExplain": "Bei Aktivieren dieser Option bleibst du beim nächsten Start des Launchers im Ankama-Account angemeldet.",
+      "trayAtClose": "Anstatt zu schließen in die Anzeigeleiste minimieren",
+      "trayAtCloseExplain": "Anstatt die Anwendung zu schließen, den Ankama Launcher in die Anzeigeleiste minimieren.",
+      "trayAtMinimize" : "Anstatt zu verkleinern, in die Anzeigeleiste minimieren",
+      "trayAtMinimizeExplain": "Den Ankama Launcher eher in die Anzeigeleiste als in die Taskleiste minimieren.",
+      "small": "SD (klein)",
+      "medium": "HD (klassisch)",
+      "large": "4K (groß)",
+      "theme" : {
+        "title":"Thema",
+        "explain":"Ermöglicht, das Aussehen des Launchers individuell anzupassen.",
+        "default": "Klassisches Thema",
+        "dark": "Dunkles Thema",
+        "allskreen": "Allskreen",
+        "krosmoz": "Krosmoz"
+      }
+    },
+    "about": {
+      "title": "Über",
+      "version": "Launcher-Version"
+    },
+    "home" : {
+      "title": "Mein ZAAP",
+      "lockHome": "Widgets sperren",
+      "lockHomeExplain": "Die Widget können nicht mehr verschoben werden. Du kannst jedoch weiterhin Widgets hinzufügen oder entfernen.",
+      "chooseConfig": "Widgets wiederherstellen",
+      "chooseConfigExplain": "Du kannst die Widgets in der Standardanordnung wiederherstellen.",
+      "selectConfig": "Anordnung wählen",
+      "configDofus": "Dofus",
+      "configWakfu": "Wakfu",
+      "configAnkamaGames": "Ankama Games"
+    },
+    "social" : {
+      "title": "Social",
+      "chat" : {
+        "chatSocial":"Chat-Anzeige",
+        "chatSocialExplain":"Deine Chat-Anzeige individuell anpassen.",
+        "title": "Chat-Anzeige",
+        "chatFontSize": "Textgröße von Nachrichten",
+        "chatFontSizeExplain":"Du kannst die Größe auch direkt im Chat mit der Tastenkombination <strong> Strg + Mausrad</strong> einstellen.",
+        "chatFontSizes": {
+          "tiny": "Klein",
+          "normal": "Mittel (Standard)",
+          "big": "Groß",
+          "huge": "Sehr groß"
+        },
+        "chatColor": "Farbe deiner Nachrichten",
+        "chatColorExplain": "Du kannst auch die Farbe deiner Nachrichten direkt im Chat mit einem einfachen Klick auf deine Nachricht ändern.",
+        "chatColors": {
+          "blue": "Blau",
+          "cyan": "Cyan",
+          "green": "Grün",
+          "gold": "Gold",
+          "orange": "Orange",
+          "red": "Rot",
+          "pink": "Rosa",
+          "purple": "Lila",
+          "white": "Weiß",
+          "grey": "Theme (Standard)"
+        }
+      }
+    },
+    "notification": {
+      "title": "Benachrichtigungen",
+      "refuseFriendInvite": "Freundschaftsanfragen ablehnen",
+      "refuseFriendInviteExplain": "Freundschaftsanfragen werden automatisch abgelehnt.",
+      "notifications": "Benachrichtigungen",
+      "chatNotification": "Alle Chat-Benachrichtigungen aktivieren",
+      "chatNotificationExplain": "Alle nachstehenden Benachrichtigungen aktivieren.",
+      "chatMessageNotification": "Benachrichtigungen bei Eingang von Nachrichten aktivieren",
+      "chatInviteNotification": "Benachrichtigungen bei Eingang von Einladungen von Freunden aktivieren",
+      "chatFriendConnectionNotification": "Benachrichtigungen bei Anmeldung eines Freunds aktivieren",
+      "updateCompleteNotification": "Benachrichtigungen über Abschluss des Downloads aktivieren",
+      "reactivateNotifications": "Stumm geschaltete Benachrichtigung",
+      "reactivateNotificationsButton": "Benachrichtigungen wiederherstellen",
+      "reactivateNotificationsExplain": "Kann stumm geschaltete Benachrichtigungen wiederherstellen."
+    },
+    "media": {
+      "title": "Medien",
+      "autoplay": "Automatische Wiedergabe der Folgen einer Serie",
+      "autoplayDescription": "Automatische Wiedergabe der nächsten Folge am Ende einer Folge derselben Staffel aktivieren.",
+      "video": "Video",
+      "stream": "Twitch",
+      "webtoon": "Webtoon",
+      "webtoonAutoUnlock": "Automatisches Freischalten der Folgen",
+      "webtoonAutoUnlockDescription": "Wenn diese Option aktiviert ist, wird die Folge per Klick auf einen kostenpflichtigen Webtoon automatisch freigeschaltet und die entsprechende Pop-up-Nachricht wird nicht angezeigt."
+    },
+    "twitch": {
+      "livestreamsNotif": "Benachrichtigung über laufende Streams",
+      "ankamaliveNotifExplain": "Benachrichtigungen aktivieren, wenn der Kanal AnkamaLive auf Sendung ist.",
+      "twitchConnect": "Verbindung zu Twitch",
+      "twitchConnectExplain": "Ermöglicht die Nutzung des Twitch-Chat während Streams.",
+      "langFilter": {
+        "title": "Streams nach Sprache filtern",
+        "explain": "Zeigt die Stream-Videos entsprechend der ausgewählten Sprachen an."
+      }
+    },
+    "multiAccount": {
+      "title": "Multi-Account",
+      "confirmAccountPurchase" : "Empfänger-Account für den Kauf bestätigen",
+      "confirmAccountPurchaseExplain" : "Zeigt eine Nachricht über den aktuellen Hauptaccount an (nur, wenn du mehrere Accounts registriert hast). <br/> Diese Nachricht wird nur einmal pro Verbindung oder bei einem Account-Wechsel angezeigt.",
+      "switchAccountPopup" : "Bestätigungs-Pop-up über den Account-Wechsel über den Abo-Link anzeigen",
+      "switchAccountPopupExplain" : "Öffnet eine Pop-up-Nachricht, die dich auffordert, den Account zu wechseln, wenn du auf „Nicht abonniert“ in der Liste deiner Accounts klickst (nur, wenn du versuchst, einen Nebenaccount zu abonnieren).",
+      "alwaysShowMultiAccountGameButton" : "Multiaccount-Schaltfläche immer anzeigen",
+      "alwaysShowMultiAccountGameButtonExplain" : "Der Multiaccount-Shortcut ist immer auf der Spielseite verfügbar, auch wenn du nur einen Account registriert hast."
+
+    },
+    "terms": {
+      "title": "Rechtliches"
+    },
+    "performance": {
+      "title": "Leistung",
+      "enableAnimation": "Benutzeroberflächen-Animationen aktivieren",
+      "enableAnimationExplain": "Aktivierte Launcher-Animationen verbessern die Nutzererfahrung, beanspruchen aber auch mehr Leistung.",
+      "enableVideo" : "Videokarusselle aktivieren",
+      "enableVideoExplain": "Videokarusselle verbessern die Nutzererfahrung, beanspruchen aber auch mehr Leistung.",
+      "keepAtGameLaunch": "Launcher bei Spielstart geöffnet lassen",
+      "keepAtGameLaunchExplain": "Bleibt der Launcher geöffnet, kannst du ihn jederzeit während deiner Spielsitzung aufrufen. Ansonsten wird er beim Starten des Spiels automatisch minimiert und in die Anzeigeleiste verschoben, um möglichst wenig Leistung zu beanspruchen.",
+      "limitDlSpeed": "Download-Geschwindigkeit begrenzen",
+      "limitDlSpeedExplain": "Kann die Bandbreite bei Downloads begrenzen.",
+      "image": {
+        "imageQuality": "Bildqualität",
+        "imageQualityExplain": "Die Bildqualität des Launchers verringern, um die Ladezeit zu verkürzen und die Leistung zu verbessern.",
+        "low": "Niedrige Qualität",
+        "medium": "Mittlere Qualität",
+        "high": "Hohe Qualität"
+      },
+      "preSelect": {
+        "performances": "Allgemeine Leistungen",
+        "performancesExplain": "Ermöglicht, alle nachstehenden Optionen schnell zu ändern.",
+        "low": "Minimale Konfiguration",
+        "medium": "Mittlere Konfiguration",
+        "high": "Maximale Konfiguration",
+        "custom": "Personalisierte Konfiguration"
+      },
+      "cytrusDLSpeed": {
+        "title": "Download-Geschwindigkeit",
+        "description": "Vom Launcher während des Downloads verwendete Bandbreite. Die Download-Geschwindigkeit von Spielen ist optimal, wenn sie deiner tatsächlichen Verbindungsgeschwindigkeit entspricht. (1 Mb/Sek. = 8 Mbit/Sek.)",
+        "test": "Verbindung testen",
+        "retest": "Verbindungstest erneut starten",
+        "error": "Es ist ein Fehler aufgetreten. Der Verbindungstest ist fehlgeschlagen."
+      },
+      "cytrusMaxRAM": {
+        "title": "Während eines Downloads genutzter max. Arbeitsspeicher",
+        "description": "Max. Arbeitsspeicher (RAM), der während eines Downloads genutzt wird."
+      }
+    }
+  },
+  "useractivities": {
+    "playingAt": "{game} spielen"
+  },
+  "installer": {
+    "welcome": "Herzlich willkommen!",
+    "button": {
+      "back": "Zurück",
+      "continue": "Weiter",
+      "close": "Schließen"
+    },
+    "selectLanguage": {
+      "title": "Sprachauswahl",
+      "description": "Bitte wähle eine Sprache für die Installation und den Launcher aus."
+    },
+    "performancePreSelect": {
+      "title": "Einstellungen des Launchers",
+      "description": "Die Performance des Launchers hängt von deinen Einstellungen ab."
+    },
+    "finish":"Bearbeitung der Einstellungen abgeschlossen."
+  },
+  "uninstaller": {
+    "validateUninstall":{
+      "title": "Deinstallieren?",
+      "description": "Du bist kurz davor, den Launcher zu deinstallieren. Willst du wirklich fortfahren?",
+      "deleteGames": "Die derzeit auf diesem PC installierten Spiele löschen"
+    },
+    "uninstallGames": {
+      "title": "Deinstallation",
+      "uninstall": "Deinstallation",
+      "gamesNeedToBeClose":"Für die Deinstallation musst du alle Spiele schließen."
+    },
+    "finish": {
+      "title": "Fertig!",
+      "description": "Der Launcher wurde erfolgreich desinstalliert.\n Klicke bitte auf „Schließen“, um den Deinstallationsassistent des Launchers zu verlassen."
+    },
+    "button": {
+      "cancel": "Abbrechen",
+      "uninstall": "Deinstallieren",
+      "close": "Schließen"
+    }
+  },
+  "universe": {
+    "errors": {
+      "notFound": "Du hast dich im Multiversum verirrt.",
+      "downloadMaxRetry": "Anzahl max. Download-Versuche erreicht.",
+      "serviceNotFound": "Dienst nicht gefunden.",
+      "noUniverseAvailable": "Die Konfiguration des Universums konnte nicht geändert werden. Deinen Launcher neu starten.",
+      "serviceConfigError": "Fehler bei der Konfiguration des Dienstes."
+    },
+    "change": "Universum wechseln",
+    "dive": "Eintauchen",
+    "tuto": {
+      "firstDive": {
+        "title": "Universum jederzeit",
+        "subtitle": "wechseln"
+      },
+      "webtoon": {
+        "title": "Die Webtoons sind verfügbar!",
+        "subtitle": "Entdecke den Krosmoz neu"
+      },
+      "newUniverse": "Neu!"
+    }
+  },
+  "webtoon": {
+    "read": "Lesen",
+    "downloadMobileApp": "<span class=\"bold\",>Webtoons</span><br/> auf Mobilgerät",
+    "flags": {
+      "soon": "In Kürze ...",
+      "exclusive": "Exklusiv für <span>{universe}</span>",
+      "new": "Neu!",
+      "offer": "Angebot!",
+      "preview": "<span>Webtoon</span>-Vorschau",
+      "privilege": "Privileg",
+      "endFree": "Für <span class='bold'>{flagData} Tag</span>",
+      "lastHourFree": "Für <span class='bold'>{flagData} Stunde</span>",
+      "lastMinuteFree": "Für <span class='bold'>{flagData} Minute</span>",
+      "endFrees": "Für <span class='bold'>{flagData} Tage</span>",
+      "lastHourFrees": "Für <span class='bold'>{flagData} Stunden</span>",
+      "lastMinuteFrees": "Für <span class='bold'>{flagData} Minuten</span>",
+      "beginFree": "In <span class='bold'>{flagData} Tagen!</span>",
+      "publishDate": "In <span class='bold'>{flagData} TAGEN!</span>",
+      "publishDateHour":"In <span class='bold'>{flagData} Stunde</span>",
+      "publishDateHours":"In <span class='bold'>{flagData} Stunden</span>",
+      "offerToday": "Bis <span class='bold'>heute!</span>",
+      "hybrid": ""
+    },
+    "details": {
+      "new": "Neu!",
+      "episodesCount": "Folgenanzahl:",
+      "info": "Informationen",
+      "episodesList": "Liste der <strong>Folgen</strong>",
+      "noDataAvailable": "Demnächst verfügbare Folgen!",
+      "exclu": "<b>Exklusiv für</b>&nbsp;{universe}",
+      "menu": "Menü",
+      "showAllEpisodes" : "Alle Folgen",
+      "volumeTome": "Band {number}",
+      "volumeActe": "Akt {number}",
+      "notFinish": "Wird ausgeführt …",
+      "resumePlay": "Abspielen fortsetzen"
+    },
+    "player": {
+      "read": "Abspielen",
+      "unlock": "Freischalten",
+      "nextEpisode": "<strong>nächste</strong> Folge",
+      "previousEpisode": "<strong>vorherige</strong> Folge"
+    },
+    "series": {
+      "author": "Autor:",
+      "author_plural": "Autoren:",
+      "authorBible": "Autoren Originalbibel:",
+      "availableLanguages": "Sprache:",
+      "availableLanguages_plural": "Sprachen:",
+      "startEpisode": "Folge {episodeNumber} lesen",
+      "resumeEpisode": "Folge {episodeNumber} weiterlesen",
+      "trailer": "Trailer",
+      "trailer_plural": "Trailer Nr. {count}",
+      "episode": "Folge {number}",
+      "follow": "Folgen",
+      "followed": "Gefolgt",
+      "unfollow": "Nicht mehr folgen",
+      "publisher" : "Editor:",
+      "publishDate" : "Veröffentlichungsdatum:",
+      "audience" : "Öffentlichkeit:",
+      "status" : "Status:",
+      "numberOfEpisodes": "Folgenanzahl:",
+      "newEpisodes": "Neue Folgen ({nbEpisode})",
+      "nbEpisodes": "Folge",
+      "nbEpisodes_plural": "Folgen",
+      "episodesInterval": "Folgen {from} bis {to}",
+      "inProgress": "Wird ausgeführt …",
+      "finished": "Beendet",
+      "youCouldLike": "Das könnte dich interessieren",
+      "youLikeThisPacks" : "Du magst diese Pakete :"
+    },
+    "episode": {
+      "warningPopup": "Manche Szenen könnten sehr junge Spieler irritieren.",
+      "warning": "Nicht für alle Altersstufen geeignet.",
+      "comingSoon": "In Kürze ...",
+      "captions": {
+        "toRead": "Noch zu lesen",
+        "read": "Bereits gelesen"
+      },
+      "availableThe": "Verfügbar am <strong>{time}</strong>",
+      "noImageAvailable": "Kein Bild verfügbar.",
+      "errorOnLoading": "Folge konnte nicht geladen werden. Bitte versuche es später erneut.",
+      "like": "Gefällt mir",
+      "wishlisted": "Später lesen",
+      "share": "Teilen",
+      "copied": "Kopiert ✓",
+      "toBeContinued": "Fortsetzung folgt",
+      "theEnd": "Ende",
+      "by": "von",
+      "editorialSupervisionByAnkama": "Redaktionelle Leitung: Ankama Éditions",
+      "forThisEdition": "für die vorliegende Ausgabe.",
+      "disclaimer": "Dieses Werk ist durch die entsprechenden Urheberrechte geschützt.<br/> Die Nutzung, die Weitergabe oder die Reproduktion von Inhalten kann strafrechtlich verfolgt werden.",
+      "endFreeThe": "bis zum <span class='bold'>{date}</span>",
+      "beginFreeThe": "gratis am <span class='bold'>{date}</span>",
+      "commentaries": {
+        "commentary": "{count} <span class=\"strong\"> Kommentar</span>",
+        "commentary_plural": "{count} <span class=\"strong\">Kommentare</span>",
+        "addCommentary": "Einen Kommentar hinzufügen ...",
+        "addAnswer": "Antwort hinzufügen ...",
+        "errorAddCommentary": "Dein Kommentar konnte nicht veröffentlicht werden. Bitte versuche es später erneut.",
+        "errorAddAnswer": "Deine Antwort konnte nicht veröffentlicht werden. Bitte versuche es später erneut.",
+        "beTheFirst": "Hinterlasse den ersten Kommentar unter dieser Folge!",
+        "errorLoading": "Kommentare konnten nicht geladen werden. Bitte versuche es später erneut.",
+        "cancelEdit": "Bearbeitung abbrechen",
+        "confirmEdit": "Bearbeitung bestätigen",
+        "showMoreCommentaries": "Weitere Kommentare anzeigen",
+        "actions": {
+          "report": "Melden",
+          "reply": "Antworten",
+          "edit": "Bearbeiten",
+          "delete": "Löschen",
+          "confirmDelete": "Klicken zum Bestätigen"
+        },
+        "answers": {
+          "showAnswers" : "<span class=\"strong\">Antworten</span> anzeigen ({number})",
+          "answers" : "Antworten"
+        },
+        "reportPopup": {
+          "title": "Melden",
+          "reportQuestion": "Worin besteht das Problem?",
+          "reportExplain": "Bitte beachten: Der Moderator wird über diese Meldung benachrichtigt. <br> Missbräuchliche oder wiederholte Meldungen können sanktioniert werden.",
+          "spam": "Spam",
+          "spamExplain": "(Flooding im Chat, Belästigung, unerwünschte Nachrichten ...)",
+          "promotion": "Regelwidrige Werbung",
+          "promotionExplain": "(Phishing, Privatserver, pornografische Websites ...)",
+          "insult": "Beleidigungen",
+          "insultExplain": "(Vulgarität, Beschimpfung, Gotteslästerung, Rassismus ...)",
+          "others": "Sonstige unangemessene Verhaltensweisen",
+          "tooltip": "Wähle einen Grund",
+          "sendTheReport": "Meldung senden",
+          "sending": "Wird gesendet ...",
+          "sended": "Gesendet!",
+          "error": "Ein Fehler ist aufgetreten."
+        }
+      }
+    },
+    "trailer": {
+      "nextTrailer": "<strong>nächster</strong> Trailer",
+      "previousTrailer": "<strong>vorheriger</strong> Trailer"
+    },
+    "library": {
+      "series": "1 Serie",
+      "series_plural": "{count} Serien",
+      "followedWebtoons": "Meine <strong>verfolgten</strong> Webtoons",
+      "history": "Mein <strong>Verlauf</strong>",
+      "wishlistedWebtoons": "Meine Webtoons für <strong>später</strong>",
+      "likedWebtoons": "Meine Webtoons-<strong>Favoriten</strong>",
+      "unlockedWebtoons": "Meine <strong>freigeschalteten</strong> Webtoons ({nb} Folgen)",
+      "episodesFromFollowedSeries": "Meine <strong>letzten Ausgaben</strong>",
+      "episodesFromFollowedSeriesComing": "Meine <strong>nächsten Ausgaben</strong>",
+      "fallback": {
+        "text1": "Hier findest du alle Serien, denen du folgst, und die angesehenen, gelikten oder gespeicherten Folgen!",
+        "text2": "Kehre zurück, nachdem du einige Webtoons gelesen hast!"
+      }
+    },
+    "header": {
+      "webtoons": "Webtoons",
+      "myLibrary": "Meine Bibliothek",
+      "leLombard": "Le Lombard",
+      "nouvelleHydre": "Nouvelle Hydre",
+      "albinMichel": "Albin Michel",
+      "dargaud": "Dargaud",
+      "ankama": "Ankama",
+      "isLibraryFilter": "Nach Serie"
+    }
+  },
+  "times": {
+    "h": "St.",
+    "min": "Min.",
+    "s": "Sek."
+  },
+  "changelog": {
+    "viewWebVersion": "Zur Webversion"
+  },
+  "wallpaper": {
+    "moreNews": "Mehr Neuheiten",
+    "moreWallpaper": "Mehr Hintergrundbilder",
+    "see": "Anzeigen",
+    "flags": {
+      "soon": "In Kürze ...",
+      "exclusive": "Exklusiv für <span>{universe}</span>",
+      "new": "Neu!",
+      "privilege": "Privileg",
+      "hybrid": ""
+    },
+    "details": {
+      "errorSettingWallpaperNotification": {
+        "title": "Fehler",
+        "message": "Hintergrundbild kann nicht definiert werden. Bitte versuche es später noch einmal.",
+        "btn": "Ok"
+      },
+      "downloadBtn": "Herunterladen",
+      "setWallpaperBtn": "Als Hintergrundbild definieren",
+      "sizeRecommended": "(empfohlen)",
+      "errorLoading": "Hintergrundbild kann nicht geladen werden. Versuche es bitte später noch einmal."
+    },
+    "galleryTitles": {
+      "newWallpaper": "<strong>Neuheiten</strong> Hintergrundbilder",
+      "giftsGallery": "<strong>Kostenlose</strong> Hintergrundbilder",
+      "wallpaperGallery": "<strong>Galerie</strong> mit Hintergrundbildern"
+    }
+  },
+  "event": {
+    "preTitle": "Event",
+    "okoo": {
+      "header": "<strong>Schaut euch kostenlos Staffel 4 von Wakfu an</strong>",
+      "title": "Kostenlos auf der App Okoo verfügbar",
+      "description": "Ab dem 9. Februar findet ihr die vollständige Staffel 4 von Wakfu auf der Plattform Okoo – dabei werden 2 Folgen pro Woche veröffentlicht!",
+      "btn": "Staffel 4 von Wakfu ansehen"
+    },
+    "timeline": {
+      "group1": "<strong>WAKFU STAFFEL 4</strong> – Animationsserie",
+      "group2": "<strong>WAKFU STAFFEL 4</strong> – Fortsetzung als Webtoon",
+      "ep": "Folge",
+      "events": {
+        "event1": "<strong>Gegenstände</strong><br/> im Spiel",
+        "event2": "<strong>WAKFU STAFFEL 4</strong><br/> Fortsetzung<br/> als Manga",
+        "event2Subtitle": "Im Buchhandel",
+        "doublage": "Mai<br/><strong>WAKFU STAFFEL 4</strong><br/>Englische Synchronfassung"
+      }
+    },
+    "news": {
+      "nextAnecdote": "Nächste Anekdote",
+      "previousAnecdote": "Vorherige Anekdote",
+      "read": "Alles lesen"
+    },
+    "seeGifts": "Liste mit Geschenken aufrufen",
+    "lotteryNotification": {
+      "title": "Saison-Token",
+      "description": "Du hast durch das Lesen dieser Episode einen Saison-Token erhalten!",
+      "btn": "Meinen Saison-Token verwenden"
+    }
+  },
+  "speedRush": {
+    "knowMore": "Mehr erfahren"
+  }
+}

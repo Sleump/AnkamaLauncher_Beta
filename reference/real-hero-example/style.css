@@ -1,0 +1,13 @@
+.m-waven-hero--background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.m-waven-hero--foreground {
+    position: absolute;
+    top: -80px;
+    left: -10%;
+    width: 130%;
+}

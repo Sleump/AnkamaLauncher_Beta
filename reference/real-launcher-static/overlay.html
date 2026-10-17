@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <meta charset="UTF-8"/>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <style type="text/css">
+  body {
+    margin:0;
+    border-radius: 20px;
+    overflow: hidden;
+  }
+
+  .overlay-container {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0);
+    overflow: hidden;
+    border-radius: 0;
+  }
+
+  .overlay-container .webvue-container {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    overflow: hidden;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+  }
+
+  .overlay-container webview {
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    background: #11100F;
+  }
+
+  .overlay-container .close-button {
+    position: absolute;
+    top: 17px;
+    right: 17px;
+    width: 25px;
+    height: 25px;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    padding: 0;
+    background: #EB1C04FF;
+    border-radius: 5px;
+  }
+
+  .overlay-container .close-button:hover {
+    background: transparent;
+    path {
+      fill: var(--primary-hover);
+    }
+  }
+
+  .overlay-container .close-button .zaap-icon{
+    width: 16px;
+    height: 16px;
+  }
+
+  .overlay-container .close-button .zaap-icon svg{
+    width: 100%;
+    height: 100%;
+  }
+
+  .close-button:hover .zaap-icon svg *{
+    fill : #FFA825;
+    stroke : #FFA825;
+  }
+
+  #loading {
+    position: absolute;
+    z-index: 1;
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    border: 3px solid rgba(255,255,255,.3);
+    border-radius: 50%;
+    border-top-color: #fff;
+    animation: spin 1s ease-in-out infinite;
+    -webkit-animation: spin 1s ease-in-out infinite;
+  }
+  .overlay-container .warning {
+    font-family: 'Roboto', sans-serif;
+    width: 100%;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #FFA825;
+    box-sizing: border-box;
+    gap: 16px;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 100%;
+    color: #272624;
+  }
+  .overlay-container .warning .click {
+    cursor: pointer;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 1100;
+    font-size: 16px;
+    line-height: 100%;
+    text-decoration: underline;
+    text-decoration-style: solid;
+    text-decoration-thickness: 10%;
+    text-decoration-skip-ink: auto;
+    color: #272624;
+  }
+
+  #text {
+    display: flex;
+    gap: 4px;
+  }
+
+  @keyframes spin {
+    to { -webkit-transform: rotate(360deg); }
+  }
+  @-webkit-keyframes spin {
+    to { -webkit-transform: rotate(360deg); }
+  }
+  </style>
+  <script type="text/javascript">
+    let overlay;
+
+    async function loadOverlay(ov, wv, lang) {
+      const preloadUrl = await window.ipcRenderer.invoke('zaap.get.path', 'overlay-preload.js');
+      const webview = document.createElement('webview');
+      webview.setAttribute('src', ov.url);
+      webview.setAttribute('partition', 'part' + ov.id);
+      webview.setAttribute('preload', preloadUrl);
+      webview.setAttribute('allowpopups', true);
+      webview.customUserAgent = 'zaap3.10.1';
+
+      webview.addEventListener('did-stop-loading', () => {
+        const loader = document.getElementById('loading');
+        loader.style.display = 'none';
+      });
+      webview.addEventListener('new-window', ({ url, preventDefault }) => {
+        preventDefault();
+        const protocol = require('url').parse(url).protocol;
+        if (/https?:/.test(protocol)) {
+          window.openExternal(url);
+        }
+      });
+      webview.addEventListener('load-commit', ({ url }) => {
+        window.blur();
+        window.focus();
+        // Close popup when payment is finished
+        if (url.includes('#close')) {
+          closeOverlay();
+        }
+      });
+
+      // Receive preload information
+      webview.addEventListener('ipc-message', (event) => {
+        try {
+          const data = event.args[0];// {"order":{"id":"220005326"},"success":true}
+          if (data) {
+            if (data.overlay === 'close') {
+              closeOverlay();
+            } else if (data.overlay === 'closeRefresh') {
+              closeOverlay();
+              window.ipcRenderer.send('refresh.shop');
+            } else {
+              window.ipcRenderer.send('overlay.confirm.payment', overlay.id, data);
+            }
+          }
+        } catch (_) {} // Not for us */
+      });
+
+      const texts = {
+        en: 'PayPal is undergoing maintenance in the Launcher and in-game shops! Pay with PayPal at',
+        fr: 'PayPal est en maintenance sur Ankama Launcher et dans les boutiques en jeu, mais fonctionne sur',
+        pt: 'PayPal está em manutenção no launcher e nas lojas do jogo! Pague com PayPal em',
+        es: '¡PayPal está en mantenimiento en el launcher y en las tiendas en juego! Paga con PayPal en',
+      };
+
+      wv.appendChild(webview);
+      const text = document.getElementById('text');
+      if (!text) {
+        return;
+      }
+
+      const div = document.createElement('div');
+      div.textContent = texts[lang];
+
+      const link = document.createElement('div');
+      link.textContent = 'Ankama Store';
+      link.classList.add('click');
+      link.addEventListener('click', () => {
+        window.ipcRenderer.invoke('overlay.open.external', 'https://store.ankama.com/');
+      });
+
+      text.appendChild(div);
+      text.appendChild(link);
+    }
+
+    (async () => {
+      overlay = await window.ipcRenderer.invoke('overlay.get');
+      const wv = document.getElementById('wv');
+      const urlSplitted = overlay.url.split('/');
+      const langs = ['fr', 'en', 'es', 'pt'];
+      const langUsed = langs.find(lang => urlSplitted.includes(lang));
+      let lang = 'en';
+      if (langUsed !== undefined) {
+        lang = langUsed;
+      }
+      if (wv) { //window already loaded
+        loadOverlay(overlay, wv, lang);
+      } else {
+        window.onload = () => {
+          const wv = document.getElementById('wv');
+          loadOverlay(overlay, wv, lang);
+        };
+      }
+    })();
+
+    // eslint-disable-next-line no-unused-vars
+    function closeOverlay() {
+      window.ipcRenderer.send('overlay.close', overlay.id);
+    }
+  </script>
+</head>
+
+<body class="overlay-container">
+  <div class="close-button" onclick="closeOverlay()">
+    <div class="zaap-icon">
+      <svg fill="none" height="26" viewBox="0 0 26 26" width="26" xmlns="http://www.w3.org/2000/svg">
+        <path clip-rule="evenodd" d="M0.292893 0.292893C0.683417 -0.0976311 1.31658 -0.0976311 1.70711 0.292893L13 11.5858L24.2929 0.292893C24.6834 -0.0976311 25.3166 -0.0976311 25.7071 0.292893C26.0976 0.683417 26.0976 1.31658 25.7071 1.70711L14.4142 13L25.7071 24.2929C26.0976 24.6834 26.0976 25.3166 25.7071 25.7071C25.3166 26.0976 24.6834 26.0976 24.2929 25.7071L13 14.4142L1.70711 25.7071C1.31658 26.0976 0.683417 26.0976 0.292893 25.7071C-0.0976311 25.3166 -0.0976311 24.6834 0.292893 24.2929L11.5858 13L0.292893 1.70711C-0.0976311 1.31658 -0.0976311 0.683417 0.292893 0.292893Z" fill="white" fill-rule="evenodd">
+        </path>
+      </svg>
+    </div>
+  </div>
+  <div id="loading"></div>
+  <div id="wv" class="webvue-container"></div>
+</body>
+</html>

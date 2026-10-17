@@ -1,0 +1,857 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Notification Manager</title>
+
+  <script>
+    let notifications = [];
+
+    function closeNotification($event, id) {
+      $event.preventDefault();
+      $event.stopPropagation();
+      window.sendClose(id);
+    }
+
+    function clickNotification($event, id) {
+      $event.preventDefault();
+      $event.stopPropagation();
+      window.sendClick(id);
+    }
+
+    function cancelAllTimeout() {
+      notifications.forEach((notification) => {
+        notification.clearTimeout();
+      });
+    }
+
+    const htmlEncodedChars = {
+      '&': '&amp;',
+      '<': '&lt;',
+      '>': '&gt;',
+      '"': '&quot;',
+      '\'': '&apos;',
+    };
+
+    function neutralizeHtml(str) {
+      return str.replace(/[<>"']|&(?![A-Za-z0-9#]+;)/g, (c) => htmlEncodedChars[c] ?? '');
+    }
+
+    function addNotification(data) {
+      try {
+        let { id } = data;
+        const { images } = data;
+        if (typeof id === 'number') { // force id to be a string
+          id = id.toString();
+        }
+        /* eslint-disable max-len */
+        let html = `<div class="img ${data.isAvatar ? 'avatar' : ''}">`;
+
+        if (images && images.length > 0) {
+          for (let i = 0; i < images.length; i++) {
+            html += `<img style="z-index:${images.length - i}" class="img-icon" src="${images[i]}" alt="Image${i}" onerror="this.style.display='none'" />`;
+          }
+        }
+
+        const notification = {
+          id,
+          div: null,
+          timeout: null,
+          timeoutMs: data.timeout,
+          setTimeout: () => {
+            if (notification.timeoutMs && !notification.timeout) {
+              notification.timeout = setTimeout(() => {
+                notification.remove();
+                notification.fade();
+                notification.timeout = null;
+              }, notification.timeoutMs);
+            }
+          },
+          remove: () => {
+            notifications = notifications.filter((e) => e.id !== id);
+
+            if (notification.div) {
+              notification.div.classList.add('leaving');
+              setTimeout(() => {
+                notification.div.remove();
+              }, 250);
+            }
+          },
+          clearTimeout: () => {
+            if (notification.timeout) {
+              clearTimeout(notification.timeout);
+              notification.timeout = null;
+            }
+          },
+          close: ($event) => closeNotification($event, id),
+          click: ($event) => clickNotification($event, id),
+          action: (key) => window.callbackAction(id, key),
+          fade: () => window.sendFade(id),
+          reply: (msg) => window.replyToMessage(id, msg),
+        };
+
+        html += `</div>
+      <div class="body">
+        <svg id="close-${id}" class="close-btn" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M0.292893 0.292893C0.683417 -0.0976311 1.31658 -0.0976311 1.70711 0.292893L13 11.5858L24.2929 0.292893C24.6834 -0.0976311 25.3166 -0.0976311 25.7071 0.292893C26.0976 0.683417 26.0976 1.31658 25.7071 1.70711L14.4142 13L25.7071 24.2929C26.0976 24.6834 26.0976 25.3166 25.7071 25.7071C25.3166 26.0976 24.6834 26.0976 24.2929 25.7071L13 14.4142L1.70711 25.7071C1.31658 26.0976 0.683417 26.0976 0.292893 25.7071C-0.0976311 25.3166 -0.0976311 24.6834 0.292893 24.2929L11.5858 13L0.292893 1.70711C-0.0976311 1.31658 -0.0976311 0.683417 0.292893 0.292893Z" fill="#9A958E">
+          </path>
+        </svg>
+
+        <div class="header">`;
+
+        if (data.icon) {
+          html += `<img class="icon" src="${data.icon}" alt="icon" onerror="this.style.display='none'" />`;
+        }
+        html += `
+          <div class="title">${neutralizeHtml(data.title)}</div>
+          <div class="subTitle"></div>
+        </div>
+
+        <div class="message">
+          ${neutralizeHtml(data.message)}
+        </div>
+
+        <div class="actions">`;
+
+        for (let j = 0; j < data.actions.length; j++) {
+          html += `
+          <div id="action-${id}-${j}" class="action ${data.actions[j].type ? data.actions[j].type : ''}">
+            <span>${neutralizeHtml(data.actions[j].label)}</span>
+          </div>
+        `;
+        }
+
+        html += `</div>`;
+
+        if (data.hasReply) {
+          html += `
+          <div class="reply action">
+            <input type="text" id="replyText-${id}" class="replyText" placeholder="${neutralizeHtml(data.replyPlaceholder)}"/>
+            <button type="button" id="replyToMessage-${id}" class="replyToMessage">
+              <img src="sendPaperPlane.svg"/>
+            </span>
+          </div>
+        `;
+        }
+
+        html += `</div>`;
+        /* eslint-enable max-len */
+        const notificationDiv = document.createElement('div');
+        notificationDiv.setAttribute('id', `notification-${id}`);
+        notificationDiv.style.cssText += `--background-color: ${data.background};`;
+        notificationDiv.classList.add('notification');
+        const notificationContainer = document.getElementById('notifications-container');
+        notificationDiv.innerHTML = html;
+        notificationDiv.style.order = id;
+
+        notificationDiv.addEventListener('mouseenter', () => {
+          notificationDiv.classList.add('hover');
+          cancelAllTimeout();
+          window.setIgnoreMouse(false);
+        });
+        notificationDiv.addEventListener('mousemove', () => {
+          notificationDiv.classList.add('hover');
+          cancelAllTimeout();
+          window.setIgnoreMouse(false);
+        });
+        notificationDiv.addEventListener('mouseleave', () => {
+          notificationDiv.classList.remove('hover');
+          notifications.forEach((notification) => {
+            notification.setTimeout();
+          });
+          window.setIgnoreMouse(true);
+        });
+
+        const subTitle = data.subTitle?.length ? neutralizeHtml(data.subTitle) : '';
+
+        if (subTitle.length > 0) {
+          const notificationSubTile = notificationDiv.getElementsByClassName('subTitle');
+          if (notificationSubTile.length > 0) {
+            notificationSubTile[0].innerHTML = `- ${subTitle}`;
+          }
+        }
+
+        notificationContainer.appendChild(notificationDiv);
+        notification.div = notificationDiv;
+        notifications.push(notification);
+
+        notification.setTimeout();
+
+        if ((!data.actions || data.actions.length === 0) && !data.hasReply) {
+          notificationDiv.addEventListener('click', ($event) => {
+            notification.clearTimeout();
+            notification.remove();
+            notification.click($event);
+          });
+        } else {
+          let actionBtn;
+
+          for (let k = 0; k < data.actions.length; k++) {
+            actionBtn = document.getElementById(`action-${id}-${k}`);
+            actionBtn.addEventListener('click', ($event) => {
+              notification.clearTimeout();
+              notification.action(k);
+              notification.remove();
+              notification.close($event);
+            });
+          }
+        }
+        if (data.hasReply) {
+          const replyButton = document.getElementById(`replyToMessage-${id}`);
+          const replyText = document.getElementById(`replyText-${id}`);
+          replyText.addEventListener('focus', () => {
+            notification.clearTimeout();
+          });
+          replyText.addEventListener('focusout', () => {
+            notification.setTimeout();
+          });
+          notificationDiv.addEventListener('click', () => {
+            replyText.focus();
+          });
+          replyButton.addEventListener('click', ($event) => {
+            if (replyText.value === '') {
+              return;
+            }
+            notification.clearTimeout();
+            notification.reply(replyText.value);
+            notification.remove();
+            notification.close($event);
+          });
+          notificationDiv.addEventListener('keypress', ($event) => {
+            if (replyText.value === '' || $event.key !== 'Enter') {
+              return;
+            }
+            notification.clearTimeout();
+            notification.reply(replyText.value);
+            notification.remove();
+            notification.close($event);
+          });
+        }
+        const closeBtn = document.getElementById(`close-${id}`);
+        closeBtn.addEventListener('click', ($event) => {
+          notification.clearTimeout();
+          notification.remove();
+          notification.close($event);
+        });
+      } catch (e) {
+        return window.detectError(data.id, e);
+      }
+    }
+
+    window.onShow(async (data) => {
+      if (notifications.length >= 5) {
+        const notification = notifications[0];
+        notification.remove();
+        notification.fade();
+      }
+      addNotification(data);
+    });
+
+    window.onMouseOut(() => {
+      notifications.forEach((notification) => {
+        notification.div.classList.remove('hover');
+        notification.setTimeout();
+      });
+    });
+
+    const menuMute = [
+      { tooltip: 'notification.mute10', iconState: 0, timer: '', time: 0 },
+      { tooltip: 'notification.mute60', iconState: 1, timer: '10\'', time: 10 * 60 * 1000 },
+      { tooltip: 'notification.mute180', iconState: 1, timer: '1h', time: 60 * 60 * 1000 },
+      { tooltip: 'notification.unmute', iconState: 1, timer: '3h', time: 3 * 60 * 60 * 1000 },
+    ];
+
+    window.onload = () => {
+      document.body.classList.add(window.platform);
+
+      const menu = document.getElementById('menu');
+
+      menu.addEventListener('mouseenter', () => {
+        menu.classList.add('hover');
+        cancelAllTimeout();
+        window.setIgnoreMouse(false);
+      });
+      menu.addEventListener('mousemove', () => {
+        menu.classList.add('hover');
+        cancelAllTimeout();
+        window.setIgnoreMouse(false);
+      });
+      menu.addEventListener('mouseleave', () => {
+        menu.classList.remove('hover');
+        notifications.forEach((notification) => {
+          notification.setTimeout();
+        });
+        window.setIgnoreMouse(true);
+      });
+
+      const menuMuteBtn = document.getElementById('menu-mute');
+      const menuMuteIconStates = Array.from(document.getElementById('menu-mute-icon-state').children);
+      const menuMuteIndicatorStates = Array.from(document.getElementById('menu-mute-indicator-state').children);
+      const menuMuteTooltip = document.getElementById('menu-mute-tooltip');
+      const menuMuteCircleIndicator = document.getElementById('menu-mute-circle-indicator');
+      function changeMuteState(stateIndex) {
+        const menuState = menuMute[stateIndex];
+        menuMuteIconStates.forEach((iconState, index) => {
+          if (index === menuState.iconState) {
+            iconState.classList.add('active');
+          } else {
+            iconState.classList.remove('active');
+          }
+        });
+        menuMuteIndicatorStates.forEach((indicatorState, index) => {
+          if (index === stateIndex) {
+            indicatorState.classList.add('active');
+          } else {
+            indicatorState.classList.remove('active');
+          }
+        });
+        if (menuState.timer) {
+          menuMuteCircleIndicator.innerHTML = menuState.timer;
+          menuMuteCircleIndicator.style.display = 'flex';
+        } else {
+          menuMuteCircleIndicator.style.display = 'none';
+        }
+        window.$t(menuState.tooltip).then((text) => {
+          menuMuteTooltip.innerHTML = text;
+        });
+        window.sendMute(menuState.time);
+      }
+
+      let menuMuteStateIndex = 0;
+      menuMuteBtn.addEventListener('click', () => {
+        menuMuteStateIndex = (menuMuteStateIndex + 1) % menuMute.length;
+        changeMuteState(menuMuteStateIndex);
+      });
+      changeMuteState(menuMuteStateIndex);
+      window.onUnmute(() => {
+        if (menuMuteStateIndex === 0) {
+          return;
+        }
+        menuMuteStateIndex = 0;
+        changeMuteState(menuMuteStateIndex);
+      });
+
+      const menuCloseBtn = document.getElementById('menu-close');
+      const menuCloseTooltip = document.getElementById('menu-close-tooltip');
+
+      window.$t('notification.closeAll').then((text) => {
+        menuCloseTooltip.innerHTML = text;
+      });
+      menuCloseBtn.addEventListener('click', (evt) => {
+        // clone list (removeNotification will modify the list)
+        [...notifications].forEach((notification) => {
+          notification.remove();
+          notification.close(evt);
+        });
+      });
+    };
+  </script>
+  <style>
+    @font-face {
+      font-family: Roboto;
+      src: url('./fonts/Roboto-Light.woff2') format('woff2');
+      font-weight: 300;
+    }
+
+    @font-face {
+      font-family: Roboto;
+      src: url('./fonts/Roboto-Regular.woff2') format('woff2');
+    }
+
+    @font-face {
+      font-family: Roboto;
+      src: url('./fonts/Roboto-Bold.woff2') format('woff2');
+      font-weight: 600;
+    }
+
+    @font-face {
+      font-family: Geomanist;
+      src: url('./fonts/Geomanist-ExtraLight.woff2') format('woff2');
+      font-weight: 100;
+      /* 300 sur figma */
+    }
+
+    @font-face {
+      font-family: Geomanist;
+      src: url('./fonts/Geomanist-Light.woff2') format('woff2');
+      font-weight: 200;
+    }
+
+    @font-face {
+      font-family: Geomanist;
+      src: url('./fonts/Geomanist-Regular.woff2') format('woff2');
+      font-weight: 300;
+    }
+
+    @font-face {
+      font-family: Geomanist;
+      src: url('./fonts/Geomanist-Medium.woff2') format('woff2');
+      font-weight: 400;
+    }
+
+    @font-face {
+      font-family: Geomanist;
+      src: url('./fonts/Geomanist-Book.woff2') format('woff2');
+      font-weight: 500;
+    }
+
+    @font-face {
+      font-family: Geomanist;
+      src: url('./fonts/Geomanist-Bold.woff2') format('woff2');
+      font-weight: 600;
+    }
+
+    @font-face {
+      font-family: Geomanist;
+      src: url('./fonts/Geomanist-Black.woff2') format('woff2');
+      font-weight: 700;
+    }
+
+    @font-face {
+      font-family: Geomanist;
+      src: url('./fonts/Geomanist-Ultra.woff2') format('woff2');
+      font-weight: 800;
+    }
+
+    body,
+    html {
+      height: 100%;
+      margin: 0;
+    }
+
+    body {
+      overflow: hidden;
+      flex-direction: row;
+      align-items: flex-end;
+      display: flex;
+      font-family: 'Roboto', sans-serif;
+    }
+
+    body.darwin {
+      align-items: flex-start;
+    }
+
+    #notifications-container {
+      overflow: hidden;
+      flex-direction: column;
+      justify-content: end;
+      display: flex;
+      flex-grow: 1;
+    }
+
+    body.darwin #notifications-container {
+      overflow: hidden;
+      flex-direction: column-reverse;
+      justify-content: start;
+      display: flex;
+      font-family: 'Roboto', sans-serif;
+
+      @keyframes notification-show {
+        0% {
+          transform: translateY(-100%);
+        }
+
+        100% {
+          transform: translateY(0);
+        }
+      }
+    }
+
+    body:not(.darwin) #notifications-container {
+      @keyframes notification-show {
+        0% {
+          transform: translateY(100%);
+        }
+
+        100% {
+          transform: translateY(0);
+        }
+      }
+    }
+
+    .notification {
+      display: flex;
+      max-height: 200px;
+      position: relative;
+      overflow: hidden;
+      border-radius: 9px;
+      margin-top: 3px;
+      color: white;
+      flex-shrink: 0;
+      padding: 18px 12px;
+      cursor: pointer;
+
+      animation: notification-show 100ms ease-out;
+      transition: top 100ms;
+    }
+
+    .notification:before {
+      position: absolute;
+      content: " ";
+      z-index: -1;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      background: var(--background-color);
+      opacity: 0.4;
+      transition: opacity 200ms;
+    }
+
+    .notification:nth-last-child(-n+3):before {
+      opacity: 0.95;
+    }
+
+    .notification:nth-last-child(n+5) {
+      opacity: 0.4;
+    }
+
+    .notification.hover:before {
+      opacity: 1;
+    }
+
+    .notification.hover {
+      opacity: 1;
+    }
+
+    .notification .img {
+      width: 41px;
+      height: 41px;
+      border-radius: 7px;
+      position: relative;
+      flex-shrink: 0;
+    }
+
+    .notification .img>.img-icon {
+      position: absolute;
+      width: 100%;
+      aspect-ratio: 1/1;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    .notification .img.avatar>.img-icon {
+      border-radius: 50%;
+    }
+
+    .notification .close-btn {
+      margin: 5px 6px 6px 6px;
+      position: absolute;
+      top: 7px;
+      right: 7px;
+      width: 12px;
+      height: 12px;
+      opacity: 0.2;
+      transition: opacity 100ms;
+    }
+
+    .notification.hover .close-btn {
+      opacity: 1;
+    }
+
+    .notification:last-child .close-btn {
+      opacity: 1;
+    }
+
+    .notification.leaving {
+      animation: notification-fade 200ms cubic-bezier(0.31, 0, 0, 1) forwards;
+    }
+
+    @keyframes notification-leave {
+      0% {
+        transform: translateX(0);
+      }
+
+      100% {
+        transform: translateX(100%);
+      }
+    }
+
+    @keyframes notification-fade {
+      0% {
+        transform: scale(1);
+      }
+
+      40% {
+        opacity: 0;
+        transform: scaleX(0.80);
+      }
+
+      100% {
+        transform: scaleX(0.80);
+        padding: 0;
+        margin: 0;
+        opacity: 0;
+        max-height: 0;
+      }
+    }
+
+    .notification .header {
+      display: inline-flex;
+      align-items: center;
+      font-size: 12px
+    }
+
+    .notification .header .icon {
+      height: 12px;
+      margin-right: 4px;
+    }
+
+    .notification .header .title {
+      font-weight: 600;
+    }
+
+    .notification .header .subTitle {
+      font-weight: 200;
+      margin-left: 5px;
+    }
+
+    .notification .header .date {
+      color: #C7C7C7;
+      font-weight: 300;
+    }
+
+    .notification .header .middot {
+      font-weight: 900;
+    }
+
+    .notification .body {
+      width: 100%;
+      margin-left: 12px;
+    }
+
+    .notification .body .message {
+      margin-top: 3px;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 11px;
+      line-height: 13px;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      display: -webkit-box;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      word-break: break-word;
+    }
+
+    /* actions */
+    .actions {
+      display: flex;
+      width: 90%;
+      gap: 0 12px;
+      justify-content: space-around;
+      align-items: center;
+    }
+
+    .action {
+      display: flex;
+      margin-top: 12px;
+      font-family: Geomanist, sans-serif;
+      width: 100%;
+      height: 28px;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid white;
+      border-radius: 20px;
+      text-transform: uppercase;
+      font-size: 11px;
+      font-weight: 600;
+    }
+
+    .action.filled {
+      color: black;
+      background-color: white;
+    }
+
+    .reply {
+      width: 90%;
+      display: none;
+      align-items: center;
+      background: white;
+      border-radius: 20px;
+      padding: 6px 9px;
+      height: 16px
+    }
+
+    .notification.hover .reply {
+      display: flex;
+    }
+
+    .replyText {
+      width: 90%;
+      height: 16px;
+      font-size: 11px;
+      line-height: 12px;
+      background: none;
+      border: none;
+    }
+
+    .replyToMessage {
+      width: 16px;
+      height: 16px;
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+
+    .replyToMessage>img {
+      width: 12px;
+      height: 12px;
+    }
+
+    /* Menu */
+    #menu {
+      display: flex;
+      flex-shrink: 0;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 63px;
+      width: 30px;
+      border-radius: 12px;
+      background-color: #252222;
+      margin-left: 2px;
+      margin-top: 3px;
+    }
+
+    #menu .tooltip {
+      display: none;
+    }
+
+    #menu *:hover>.tooltip {
+      display: flex;
+      position: absolute;
+      top: 50%;
+      right: 100%;
+      background: black;
+      border-radius: 20px;
+      padding: 5px 10px;
+      transform: translate(-5px, -50%);
+      white-space: nowrap;
+      font-size: 11px;
+      color: white;
+    }
+
+    .menu-btn {
+      position: relative;
+      cursor: pointer;
+    }
+
+    /** Menu CLOSE */
+    #menu-close {
+      margin-bottom: 7px;
+    }
+
+    #menu-close svg {
+      width: 12px;
+      height: 12px;
+    }
+
+    /** Menu MUTE */
+    #menu-mute {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    #menu-mute #menu-mute-icon-state svg {
+      display: none;
+      width: 19px;
+      height: 19px;
+    }
+
+    #menu-mute #menu-mute-icon-state svg.active {
+      display: inline;
+    }
+
+    #menu-mute-circle-indicator {
+      position: absolute;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background-color: white;
+      top: 0;
+      right: 0;
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      font-size: 9px;
+      line-height: 5px;
+      letter-spacing: -1px;
+      text-align: center;
+      font-weight: 900;
+    }
+
+    #menu-mute-indicator-state {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 100%;
+      flex-direction: row;
+    }
+
+    #menu-mute-indicator-state .state {
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      background-color: white;
+      margin: 0 1.5px;
+      opacity: 0.2;
+      transition: all 100ms;
+    }
+
+    #menu-mute-indicator-state .state.active {
+      opacity: 1;
+      transform: scale(1.5);
+    }
+  </style>
+</head>
+
+<body>
+  <div id="notifications-container"></div>
+  <div id="menu">
+    <div id="menu-close" class="menu-btn">
+      <svg width="34" height="33" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M22.1534 1.84619L1.8457 22.1539M1.8457 1.84619L22.1534 22.1539" stroke="white" stroke-width="2"
+          stroke-linecap="round" stroke-linejoin="round" />
+      </svg>
+      <div id="menu-close-tooltip" class="tooltip"></div>
+    </div>
+    <div id="menu-mute" class="menu-btn">
+      <span id="menu-mute-icon-state">
+        <svg width="34" height="33" viewBox="0 0 34 33" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M17 31.5C18.6159 31.5 19.9905 30.4565 20.5 29V28H13.5V29C14.0095 30.4565 15.3841 31.5 17 31.5Z"
+            stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+          <path
+            d="M16.9999 5C11.2221 5 6 9.52099 6 16.3963L6 22C3 24 3 26 3 28L31 28C31 26 31 24 28 22L28 16.3962C28 9.52096 22.7777 5 16.9999 5Z"
+            stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+          <path d="M17 5V1" stroke="white" stroke-width="2" stroke-linecap="round" />
+          <path d="M1 16C1 10.3411 3.56093 5.80732 7.35403 3M33 15.9999C33 10.341 30.439 5.80731 26.6458 3"
+            stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+        <svg width="34" height="35" viewBox="0 0 34 35" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 5.43555L31 33.373" stroke="white" stroke-width="2" stroke-linecap="round" />
+          <path
+            d="M26.4576 28.79L31 28.79C31 26.79 31 24.79 28 22.79V17.1863C28 10.311 22.7777 5.79004 16.9999 5.79004C13.4882 5.79004 10.1818 7.46011 8.12842 10.3138M6.26829 14.5629C6.09314 15.392 6 16.2682 6 17.1863L6 22.79C3 24.79 3 26.79 3 28.79L20.6511 28.79C20.6524 29.0638 20.6139 29.4645 20.5 29.79C19.9905 31.2465 18.6159 32.29 17 32.29C15.3841 32.29 14.0095 31.2465 13.5 29.79"
+            stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+          <path d="M17 5.79004V1.79004" stroke="white" stroke-width="2" stroke-linecap="round" />
+        </svg>
+      </span>
+      <div id="menu-mute-indicator-state">
+        <span class="state"></span>
+        <span class="state"></span>
+        <span class="state"></span>
+        <span class="state"></span>
+      </div>
+      <div id="menu-mute-circle-indicator"></div>
+      <span id="menu-mute-tooltip" class="tooltip"></span>
+    </div>
+  </div>
+</body>
+
+</html>
