@@ -39,6 +39,9 @@
               </template>
               <template v-else>
                 {{ $t('releaseViewActionBar.downloadSpeed', { downloadSpeed }) }}
+                <template v-if="estimatedTimeRemaining">
+                  &middot; {{ estimatedTimeRemaining }}
+                </template>
               </template>
             </div>
           </div>
