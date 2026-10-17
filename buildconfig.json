@@ -15,7 +15,7 @@
     "url": "http://127.0.0.1:9000/"
   },
   "siteApi": {
-    "loginUrl": "http://158.69.222.31/api/launcher_login.php"
+    "loginUrl": "http://158.69.222.31/site/api/launcher_login.php"
   },
   "ankama": {
     "go": "https://go.ankama.com/"
