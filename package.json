@@ -1,7 +1,7 @@
 {
   "name": "zaap",
   "productName": "Dofus Retro Launcher",
-  "version": "2.8.4",
+  "version": "2.8.5",
   "copyright": "Dofus Retro (projet communautaire non officiel, sans lien avec Ankama)",
   "description": "Launcher non officiel pour le serveur prive Dofus Retro (ElbustEmu)",
   "main": "index.js",
