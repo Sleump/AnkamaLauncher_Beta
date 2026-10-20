@@ -120,6 +120,10 @@
   "releaseView": {
     "version": "Version {version}"
   },
+  "releaseViewPushes": {
+    "title": "Retro-News",
+    "moreLink": "+ News"
+  },
   "releaseViewActionBar": {
     "options": "Optionen",
     "update": "Aktualisieren",

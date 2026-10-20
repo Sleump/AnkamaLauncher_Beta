@@ -1,13 +1,24 @@
 <template>
-  <div class="m-release-pushes">
-    <a class="m-release-pushes--push" v-for="push in pushes" @click="openExternalPush(push)">
-      <div class="m-release-pushes--push-image" :style="{'background-image': 'url(' + push.imageUrl + ')'}"></div>
-      <div class="m-release-pushes--push-title-wrapper">
-        <div class="m-release-pushes--push-title">
-          {{ push.title }}
+  <div class="m-release-pushes-wrapper" v-if="pushes.length">
+    <div class="m-release-pushes--header">
+      <span class="m-release-pushes--header-title">{{ $t('releaseViewPushes.title') }}</span>
+      <a class="m-release-pushes--header-more" @click="openExternalPush({url: moreUrl})" v-if="moreUrl">
+        {{ $t('releaseViewPushes.moreLink') }}
+      </a>
+    </div>
+    <div class="m-release-pushes">
+      <a class="m-release-pushes--push" v-for="push in pushes" @click="openExternalPush(push)">
+        <div class="m-release-pushes--push-image" :style="{'background-image': 'url(' + push.imageUrl + ')'}"></div>
+        <div class="m-release-pushes--push-title-wrapper">
+          <div class="m-release-pushes--push-title">
+            {{ push.title }}
+          </div>
+          <div class="m-release-pushes--push-date" v-if="push.date">
+            {{ push.date }}
+          </div>
         </div>
-      </div>
-    </a>
+      </a>
+    </div>
   </div>
 </template>
 
@@ -23,6 +34,17 @@
       },
       pushes() {
         return this.$store.getters.displayedRelease.news
+      },
+      moreUrl() {
+        // "+ d'actus" renvoie vers la liste complete des actus du site : on
+        // la deduit du lien du premier item (racine = tout avant "news.php"
+        // ou "/api/" pour rester generique sur l'hebergement) plutot que de
+        // coder en dur une URL de site dans ce composant generique.
+        if (!this.pushes.length || !this.pushes[0].url) {
+          return null
+        }
+
+        return this.pushes[0].url.replace(/\/[^/]*\.php(\?.*)?$/, '/')
       },
     },
     methods: {
@@ -48,10 +70,38 @@
 </script>
 
 <style>
+  .m-release-pushes-wrapper {
+    margin-top: 20px;
+  }
+
+  .m-release-pushes--header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+  }
+
+  .m-release-pushes--header-title {
+    font: var(--font-weight-dosis-semibold) var(--font-size-subtitle) var(--font-family-dosis);
+    color: var(--color-white);
+    text-shadow: var(--text-shadow-default);
+    letter-spacing: 1px;
+  }
+
+  .m-release-pushes--header-more {
+    cursor: pointer;
+    color: var(--color-lighten-primary);
+    font-weight: var(--font-weight-raleway-bold);
+    font-size: var(--font-size-small);
+  }
+
+  .m-release-pushes--header-more:hover {
+    text-decoration: underline;
+  }
+
   .m-release-pushes {
     position: relative;
     display: flex;
-    margin-top: 20px;
     transform: translateZ(0); /* Force pushes to be on their own layer - Also force GPU usage */
   }
 
@@ -102,6 +152,14 @@
     -webkit-box-orient: vertical;
     overflow: hidden;
     text-overflow: ellipsis;
+  }
+
+  .m-release-pushes--push-date {
+    margin-top: 4px;
+    color: var(--color-white-50);
+    font-size: var(--font-size-small);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
   }
 
   .m-release-pushes--push-image {

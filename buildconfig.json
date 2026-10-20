@@ -15,6 +15,9 @@
     "loginUrl": "http://158.69.222.31/site/api/launcher_login.php",
     "zaapTokenUrl": "http://158.69.222.31/site/api/launcher_zaap_token.php"
   },
+  "site": {
+    "url": "http://158.69.222.31/site/"
+  },
   "ankama": {
     "go": "https://go.ankama.com/"
   },

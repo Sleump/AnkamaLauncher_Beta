@@ -120,6 +120,10 @@
   "releaseView": {
     "version": "Versão {version}"
   },
+  "releaseViewPushes": {
+    "title": "Notícias Retro",
+    "moreLink": "+ notícias"
+  },
   "releaseViewActionBar": {
     "options": "Opções",
     "update": "Atualizar",

@@ -129,6 +129,10 @@
   "releaseView": {
     "version": "Version {version}"
   },
+  "releaseViewPushes": {
+    "title": "Retro News",
+    "moreLink": "+ news"
+  },
   "releaseViewActionBar": {
     "options": "Options",
     "update": "Update",
