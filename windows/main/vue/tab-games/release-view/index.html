@@ -177,7 +177,10 @@
   .m-release-view {
     position: relative;
     display: block;
-    width: calc(100% - var(--aside-width));
+    /* 100% et non calc(100% - var(--aside-width)) : release-list est
+       cachee (voir sa feuille de style), l'icone "Games" du rail
+       applicatif (app.html) joue deja ce role visuel. */
+    width: 100%;
     height: 100%;
   }
 

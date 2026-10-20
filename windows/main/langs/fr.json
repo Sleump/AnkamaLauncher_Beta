@@ -42,7 +42,17 @@
   "header": {
     "menu": {
       "games": "Jeux"
-    }
+    },
+    "rail": {
+      "videosSoon": "Vidéos (bientôt disponible)",
+      "voiceSoon": "Vocal (bientôt disponible)",
+      "docsSoon": "Documents (bientôt disponible)",
+      "gallerySoon": "Galerie (bientôt disponible)",
+      "shop": "Boutique",
+      "addGameSoon": "Ajouter un jeu (bientôt disponible)"
+    },
+    "support": "Support",
+    "settings": "Paramètres"
   },
   "logbox": {
     "offline": "Hors ligne",

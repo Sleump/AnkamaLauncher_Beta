@@ -41,7 +41,17 @@
   "header": {
     "menu": {
       "games": "Spiele"
-    }
+    },
+    "rail": {
+      "videosSoon": "Videos (demnächst)",
+      "voiceSoon": "Sprachchat (demnächst)",
+      "docsSoon": "Dokumente (demnächst)",
+      "gallerySoon": "Galerie (demnächst)",
+      "shop": "Shop",
+      "addGameSoon": "Spiel hinzufügen (demnächst)"
+    },
+    "support": "Support",
+    "settings": "Einstellungen"
   },
   "logbox": {
     "offline": "Offline",

@@ -62,8 +62,16 @@
 </script>
 
 <style>
+  /**
+   * Cache : avec un seul jeu, cette colonne (liste des jeux installes)
+   * ferait doublon avec l'icone "Games" du rail applicatif (app.html,
+   * m-app--rail) qui occupe deja visuellement cette meme colonne, juste
+   * au-dessus. release-view est passe a 100% de largeur en consequence
+   * (voir sa propre feuille de style). A reactiver (display: block) si
+   * plusieurs jeux sont geres un jour par ce launcher.
+   */
   .m-release-list-bar {
-    display: block;
+    display: none;
     width: var(--aside-width);
     height: 100%;
     background: var(--color-black-30);

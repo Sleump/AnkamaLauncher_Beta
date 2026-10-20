@@ -18,23 +18,61 @@
       <template v-else>
         <login v-if="!isAuthenticated || isUserLoading"></login>
         <template v-else>
-          <header class="m-app--header">
-            <div class="m-app--header-logo">
-              <img :src="component.path + '/logo.png'" alt="">
-              <zaap-autoupdate-progress></zaap-autoupdate-progress>
-            </div>
+          <aside class="m-app--rail">
+            <img class="m-app--rail-logo" :src="component.path + '/logo-retro-official.png'" alt="">
 
-            <ul class="m-app--menu">
-              <li @click="showTab('games')"
-                  class="m-app--menu-item" :class="{'m-app--menu-item__active': currentTab === 'games'}">
-                {{ $t('header.menu.games') }}
+            <ul class="m-app--rail-icons">
+              <li class="m-app--rail-icon m-app--rail-icon__active" @click="showTab('games')"
+                  :title="$t('header.menu.games')">
+                <zaap-icon icon="controller"></zaap-icon>
+              </li>
+              <li class="m-app--rail-icon m-app--rail-icon__disabled" :title="$t('header.rail.videosSoon')">
+                <zaap-icon icon="tv"></zaap-icon>
+              </li>
+              <li class="m-app--rail-icon m-app--rail-icon__disabled" :title="$t('header.rail.voiceSoon')">
+                <zaap-icon icon="mic"></zaap-icon>
+              </li>
+              <li class="m-app--rail-icon m-app--rail-icon__disabled" :title="$t('header.rail.docsSoon')">
+                <zaap-icon icon="document"></zaap-icon>
+              </li>
+              <li class="m-app--rail-icon m-app--rail-icon__disabled" :title="$t('header.rail.gallerySoon')">
+                <zaap-icon icon="image"></zaap-icon>
+              </li>
+              <li class="m-app--rail-icon" @click="openShop" :title="$t('header.rail.shop')">
+                <zaap-icon icon="shop"></zaap-icon>
               </li>
             </ul>
 
-            <logbox></logbox>
-          </header>
+            <div class="m-app--rail-add" :title="$t('header.rail.addGameSoon')">
+              <zaap-icon icon="plus"></zaap-icon>
+            </div>
+          </aside>
 
-          <tab-games v-if="currentTab === 'games'"></tab-games>
+          <div class="m-app--content">
+            <header class="m-app--header">
+              <div class="m-app--header-banner">
+                <div class="m-app--header-banner-logo-wrap">
+                  <img :src="component.path + '/logo-dofusretro-official.png'" class="m-app--header-banner-logo" alt="Dofus Retro">
+                  <zaap-autoupdate-progress></zaap-autoupdate-progress>
+                </div>
+                <zaap-icon icon="sparkle" class="m-app--header-banner-deco"></zaap-icon>
+                <zaap-icon icon="medal" class="m-app--header-banner-deco"></zaap-icon>
+              </div>
+
+              <div class="m-app--header-actions">
+                <div class="m-app--header-action" @click="openSupport" :title="$t('header.support')">
+                  <zaap-icon icon="chat"></zaap-icon>
+                </div>
+                <div class="m-app--header-action" @click="openSettings" :title="$t('header.settings')">
+                  <zaap-icon icon="gear"></zaap-icon>
+                </div>
+
+                <logbox></logbox>
+              </div>
+            </header>
+
+            <tab-games v-if="currentTab === 'games'"></tab-games>
+          </div>
         </template>
       </template>
 
@@ -79,6 +117,15 @@
     methods: {
       showTab(tabName) {
         this.currentTab = tabName
+      },
+      openShop() {
+        this.$store.dispatch('goAnkamaOpen', 'shop')
+      },
+      openSupport() {
+        this.$store.dispatch('goAnkamaOpen', 'support')
+      },
+      openSettings() {
+        this.$store.dispatch('openZaapSettingsPopup')
       },
     },
     watch: {
@@ -130,6 +177,7 @@
 
   .m-app-container {
     position: relative;
+    display: flex;
     height: calc(100% - var(--m-window-controls-height));
     transform: translateZ(0);
   }
@@ -153,33 +201,173 @@
     font: var(--font-title);
   }
 
+  /**
+   * Left rail (app/feature switcher, style du vrai launcher Ankama) --
+   * seule l'icone "Games" (manette) est fonctionnelle : les autres
+   * correspondent a des produits/fonctionnalites Ankama qu'on n'a pas
+   * (stream, vocal, documents, galerie). Gardees visibles pour la
+   * ressemblance visuelle demandee, desactivees au clic (voir
+   * m-app--rail-icon__disabled) pour ne pas laisser croire qu'elles font
+   * quelque chose.
+   */
+  .m-app--rail {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: var(--aside-width);
+    height: 100%;
+    flex-shrink: 0;
+    background: var(--color-black-pearl);
+    z-index: 2;
+    padding: 10px 0;
+  }
+
+  .m-app--rail-logo {
+    width: 36px;
+    height: 36px;
+    margin-bottom: 12px;
+  }
+
+  .m-app--rail-icons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    width: 100%;
+  }
+
+  .m-app--rail-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 38px;
+    height: 38px;
+    border-radius: 8px;
+    color: var(--color-white-50);
+    cursor: pointer;
+    transition: background 150ms, color 150ms;
+  }
+
+  .m-app--rail-icon .c-zaap-icon {
+    width: 20px;
+    height: 20px;
+  }
+
+  .m-app--rail-icon:hover {
+    background: var(--color-white-10);
+    color: var(--color-white);
+  }
+
+  .m-app--rail-icon__active {
+    background: var(--color-primary);
+    color: var(--color-white);
+  }
+
+  .m-app--rail-icon__active:hover {
+    background: var(--color-primary);
+  }
+
+  .m-app--rail-icon__disabled {
+    cursor: default;
+    opacity: 0.5;
+  }
+
+  .m-app--rail-icon__disabled:hover {
+    background: none;
+    color: var(--color-white-50);
+  }
+
+  .m-app--rail-add {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    margin-top: auto;
+    border-radius: 50%;
+    border: 1px dashed var(--color-white-30);
+    color: var(--color-white-50);
+    cursor: default;
+  }
+
+  .m-app--rail-add .c-zaap-icon {
+    width: 14px;
+    height: 14px;
+  }
+
+  /**
+   * Content (header + tab-games), a droite du rail
+   */
+  .m-app--content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    min-width: 0;
+    height: 100%;
+  }
+
   .m-app--header {
     position: relative;
     display: flex;
+    align-items: center;
+    justify-content: space-between;
     height: var(--header-height);
     background: var(--color-black-60);
+    padding: 0 16px;
     z-index: 1;
   }
 
-  .m-app--header-logo {
+  .m-app--header-banner {
     position: relative;
-    width: var(--aside-width);
-    text-align: center;
-    padding: 5px 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
   }
 
-  .m-app--header-logo img {
-    width: 40px;
+  .m-app--header-banner-logo-wrap {
+    position: relative;
+    display: flex;
+    align-items: center;
   }
 
-  .m-app--menu {
-    font: var(--font-weight-dosis-semibold) var(--font-size-subtitle) var(--font-family-dosis);
-    line-height: var(--header-height);
-    margin: 0 25px;
+  .m-app--header-banner-logo {
+    height: 28px;
   }
 
-  .m-app--menu-item {
-    display: inline-block;
-    padding: 0 15px;
+  .m-app--header-banner-deco {
+    width: 18px;
+    height: 18px;
+    color: var(--color-lighten-primary);
+    opacity: 0.8;
+  }
+
+  .m-app--header-actions {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .m-app--header-action {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    color: var(--color-white-50);
+    cursor: pointer;
+    transition: background 150ms, color 150ms;
+  }
+
+  .m-app--header-action .c-zaap-icon {
+    width: 18px;
+    height: 18px;
+  }
+
+  .m-app--header-action:hover {
+    background: var(--color-white-10);
+    color: var(--color-white);
   }
 </style>

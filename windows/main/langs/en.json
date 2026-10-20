@@ -42,7 +42,17 @@
   "header": {
     "menu": {
       "games": "Games"
-    }
+    },
+    "rail": {
+      "videosSoon": "Videos (coming soon)",
+      "voiceSoon": "Voice (coming soon)",
+      "docsSoon": "Documents (coming soon)",
+      "gallerySoon": "Gallery (coming soon)",
+      "shop": "Shop",
+      "addGameSoon": "Add a game (coming soon)"
+    },
+    "support": "Support",
+    "settings": "Settings"
   },
   "logbox": {
     "offline": "Offline",

@@ -6,6 +6,7 @@
         <div class="m-logbox--avatar m-logbox--avatar-offline">
           <zaap-icon icon="offline"></zaap-icon>
         </div>
+        <span class="m-logbox--status-dot" :class="{'m-logbox--status-dot__offline': !isOnline}"></span>
         <span class="m-logbox--nickname">{{ nickname }}</span>
         <span class="m-logbox--offline-label">{{ $t('logbox.offline') }}</span>
       </template>
@@ -58,7 +59,7 @@
         this.openGoAnkama('profile')
       },
       help() {
-        this.$store.dispatch('openExternal', 'https://support.ankama.com')
+        this.openGoAnkama('support')
       },
       logout() {
         this.$store.dispatch('logout')
@@ -72,18 +73,22 @@
 
 <style>
   .m-logbox {
-    position: absolute;
-    top: 5px;
-    right: 5px;
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    height: var(--header-height);
   }
 
   .m-logbox--avatar {
     position: absolute;
-    top: 8px;
+    top: 50%;
     left: 8px;
     width: calc(var(--header-height) - 26px);
     height: calc(var(--header-height) - 26px);
     border: 1px solid var(--color-white-10);
+    border-radius: 50%;
+    transform: translateY(-50%);
+    object-fit: cover;
   }
 
   .m-logbox--avatar-offline {
@@ -94,6 +99,32 @@
 
   .m-logbox--avatar-offline .c-zaap-icon {
     margin-left: 0;
+  }
+
+  .m-logbox--status-dot {
+    position: absolute;
+    top: 50%;
+    left: 8px;
+    width: calc(var(--header-height) - 26px);
+    height: calc(var(--header-height) - 26px);
+    transform: translateY(-50%);
+    pointer-events: none;
+  }
+
+  .m-logbox--status-dot::after {
+    content: "";
+    position: absolute;
+    right: -1px;
+    bottom: -1px;
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: var(--color-online);
+    border: 2px solid var(--color-black-pearl);
+  }
+
+  .m-logbox--status-dot__offline::after {
+    background: var(--color-punch);
   }
 
   .m-logbox--nickname {
